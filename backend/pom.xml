@@ -12,7 +12,7 @@
     <artifactId>backend</artifactId>
     <version>0.0.1</version>
     <name>backend</name>
-    <description>RESTful backend for the E-learning platform</description>
+    <description>RESTful backend for UBB Courses app</description>
 
     <properties>
         <java.version>11</java.version>
