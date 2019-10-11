@@ -21,7 +21,7 @@
     "flow": "flow",
     "lint": "eslint -c .eslintrc --ext .jsx --ext .js --color --fix .",
     "format": "prettier --config .prettierrc --write **/*.{js,jsx,css,scss} --loglevel=warn",
-    "fix": "yarn format && yarn lint"
+    "fix": "yarn format && yarn lint && yarn flow"
   },
   "eslintConfig": {
     "extends": "react-app"

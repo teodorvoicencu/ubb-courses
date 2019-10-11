@@ -3,10 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="117b9ca3-6cb7-4ddc-b3a3-93fab676a127" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.eslintrc" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.eslintrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,12 +29,6 @@
         <option name="importAutomatically" value="true" />
       </MavenImportingSettings>
     </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="870" />
-    <option name="y" value="-23" />
-    <option name="width" value="974" />
-    <option name="height" value="1047" />
   </component>
   <component name="ProjectId" id="1S1sn0fSuEIEgl8YJKvCOVBu5DG" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -161,7 +154,7 @@
       <workItem from="1570741397715" duration="1282000" />
       <workItem from="1570743931316" duration="263000" />
       <workItem from="1570744338162" duration="912000" />
-      <workItem from="1570745270828" duration="929000" />
+      <workItem from="1570745270828" duration="5521000" />
     </task>
     <servers />
   </component>
