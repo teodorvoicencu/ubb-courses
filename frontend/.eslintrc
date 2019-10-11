@@ -8,10 +8,14 @@
   "extends": [
     "airbnb",
     "prettier",
-    "plugin:flowtype/recommended"
+    "plugin:flowtype/recommended",
+    "plugin:react-redux/recommended",
+    "plugin:redux-saga/recommended"
   ],
   "plugins": [
-    "flowtype"
+    "flowtype",
+    "react-redux",
+    "redux-saga"
   ],
   "settings": {
     "import/resolver": {
