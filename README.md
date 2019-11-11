@@ -85,6 +85,7 @@ For more information please see the `README.md` file inside the folder.
 - **Nicoleta Ungur**
 - **Matei Stroia**
 - **Vlad Tugui**
+- **Tanko Gabor Tihamer**
 
 # License
 This project is licensed under the MIT License - see the `LICENSE.md` file for details.
