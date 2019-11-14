@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "shinkansen.jwt.secret",
+      "type": "java.lang.String",
+      "description": "Description for shinkansen.jwt.secret."
+  }
+] }
