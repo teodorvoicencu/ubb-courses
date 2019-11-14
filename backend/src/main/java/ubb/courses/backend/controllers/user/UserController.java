@@ -1,4 +1,4 @@
-package ubb.courses.backend.controllers;
+package ubb.courses.backend.controllers.user;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,12 +20,12 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/api/auth")
-public class AuthenticationController {
+public class UserController implements IUserController {
 
     private final IUserService userService;
     private final IDTOConverter<RegisterDTO, User> registerConverter;
 
-    public AuthenticationController(IUserService userService, RegisterConverter registerConverter) {
+    public UserController(IUserService userService, RegisterConverter registerConverter) {
         this.userService = userService;
         this.registerConverter = registerConverter;
     }

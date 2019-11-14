@@ -1,50 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="117b9ca3-6cb7-4ddc-b3a3-93fab676a127" name="Default Changelist" comment="Finish the jwt authentication&#10;&#10;- added necessary configurations&#10;- added cors&#10;- created base entity&#10;- created the necessary data models&#10;- implemented the authentication using roles&#10;- create the controller &#10;- created register and login api calls&#10;- created dtos for login and register">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_modelmapper_modelmapper_2_3_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ubb/courses/backend/configs/ManagementConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ubb/courses/backend/controllers/AuthenticationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ubb/courses/backend/controllers/exceptions/AppException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ubb/courses/backend/controllers/exceptions/authentication/AuthenticationExceptionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ubb/courses/backend/controllers/exceptions/authentication/EmailException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ubb/courses/backend/controllers/exceptions/authentication/UsernameException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ubb/courses/backend/controllers/responses/ApiResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ubb/courses/backend/controllers/responses/JwtAuthenticationResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ubb/courses/backend/dtos/BaseDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ubb/courses/backend/dtos/DTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ubb/courses/backend/dtos/IDTOConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ubb/courses/backend/dtos/authentication/LoginConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ubb/courses/backend/dtos/authentication/LoginDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ubb/courses/backend/dtos/authentication/RegisterConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ubb/courses/backend/dtos/authentication/RegisterDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ubb/courses/backend/repositories/AuthorityRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ubb/courses/backend/services/IUserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ubb/courses/backend/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_11.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_bouncycastle_bcpkix_jdk15on_1_56.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_bouncycastle_bcprov_jdk15on_1_56.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_core_asl_1_9_13.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_mapper_asl_1_9_13.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_oauth_boot_spring_security_oauth2_autoconfigure_2_0_0_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_oauth_spring_security_oauth2_2_2_1_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_jwt_1_0_9_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ubb/courses/backend/UserSeeder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ubb/courses/backend/configs/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ubb/courses/backend/configs/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ubb/courses/backend/configs/WebMvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ubb/courses/backend/configs/WebMvcConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ubb/courses/backend/models/authorization/Authority.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ubb/courses/backend/models/authorization/Authority.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ubb/courses/backend/models/authorization/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ubb/courses/backend/models/authorization/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ubb/courses/backend/models/authorization/UserAuthority.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ubb/courses/backend/models/authorization/UserAuthority.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ubb/courses/backend/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ubb/courses/backend/repositories/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ubb/courses/backend/security/CustomUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ubb/courses/backend/security/CustomUserDetailsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ubb/courses/backend/security/JwtTokenProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ubb/courses/backend/security/JwtTokenProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/db/migration/V01__create_authority.sql" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/db/migration/V01__create_authority.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/db/migration/V02__create_user.sql" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/db/migration/V02__create_user.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/db/migration/V03__create_user_authority.sql" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/db/migration/V03__create_user_authority.sql" afterDir="false" />
-    </list>
+    <list default="true" id="117b9ca3-6cb7-4ddc-b3a3-93fab676a127" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,8 +67,8 @@
       <list>
         <option value="Enum" />
         <option value="SQL Script" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -146,7 +103,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570742336350" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/backend/src/main/java/ubb/courses/backend/dtos" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -164,18 +121,19 @@
     <property name="settings.editor.selected.configurable" value="SQL Dialects" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Beast\Desktop\UBB\Sem5\ubb-courses" />
+      <recent name="C:\Users\Beast\Desktop\UBB\Sem5\ubb-courses\backend\src\main\java\ubb\courses\backend\dtos" />
+      <recent name="C:\Users\Beast\Desktop\UBB\Sem5\ubb-courses\frontend" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ubb.courses.backend.configs" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Beast\Desktop\UBB\Sem 5\Proiect Colectiv" />
       <recent name="C:\Users\Beast\Desktop\UBB\Sem5\ubb-courses\frontend\src\app\styles" />
       <recent name="C:\Users\Beast\Desktop\UBB\Sem5\ubb-courses\frontend\src\app\__tests__" />
       <recent name="C:\Users\Beast\Desktop\UBB\Sem5\ubb-courses\frontend\src\app" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="ubb.courses.backend.configs" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Beast\Desktop\UBB\Sem5\ubb-courses\backend\src\main\java\ubb\courses\backend\dtos" />
-      <recent name="C:\Users\Beast\Desktop\UBB\Sem5\ubb-courses\frontend" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -272,8 +230,30 @@
       <workItem from="1570744338162" duration="912000" />
       <workItem from="1570745270828" duration="28913000" />
       <workItem from="1571154613251" duration="15000" />
-      <workItem from="1573727435949" duration="6381000" />
+      <workItem from="1573727435949" duration="7447000" />
     </task>
+    <task id="LOCAL-00001" summary="Finish the jwt authentication&#10;&#10;- added necessary configurations&#10;- added cors&#10;- created base entity&#10;- created the necessary data models&#10;- implemented the authentication using roles&#10;- create the controller &#10;- created register and login api calls&#10;- created dtos for login and register">
+      <created>1573734962298</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1573734962298</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Code refactor&#10;&#10;- renamed AuthenticationController to UserController&#10;- created interface for controller&#10;- moved the user exceptions into their own package">
+      <created>1573735684965</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1573735684965</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Code refactor&#10;&#10;- renamed AuthenticationController to UserController&#10;- created interface for controller&#10;- moved the user exceptions into their own package">
+      <created>1573735885370</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1573735885370</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -297,7 +277,8 @@
       <path value="$PROJECT_DIR$/frontend" />
     </ignored-roots>
     <MESSAGE value="Finish the jwt authentication&#10;&#10;- added necessary configurations&#10;- added cors&#10;- created base entity&#10;- created the necessary data models&#10;- implemented the authentication using roles&#10;- create the controller &#10;- created register and login api calls&#10;- created dtos for login and register" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finish the jwt authentication&#10;&#10;- added necessary configurations&#10;- added cors&#10;- created base entity&#10;- created the necessary data models&#10;- implemented the authentication using roles&#10;- create the controller &#10;- created register and login api calls&#10;- created dtos for login and register" />
+    <MESSAGE value="Code refactor&#10;&#10;- renamed AuthenticationController to UserController&#10;- created interface for controller&#10;- moved the user exceptions into their own package" />
+    <option name="LAST_COMMIT_MESSAGE" value="Code refactor&#10;&#10;- renamed AuthenticationController to UserController&#10;- created interface for controller&#10;- moved the user exceptions into their own package" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
