@@ -1,6 +1,8 @@
 package ubb.courses.backend.models.authorization;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -10,6 +12,8 @@ import javax.persistence.*;
         uniqueConstraints = @UniqueConstraint(columnNames = {"name"}, name = "AUTHORITY_UNIQUE_NAME"))
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Authority {
 
     @Id
@@ -21,4 +25,7 @@ public class Authority {
     @Enumerated(EnumType.STRING)
     private AuthorityType name;
 
+    public Authority(AuthorityType authority) {
+        this.name = authority;
+    }
 }
