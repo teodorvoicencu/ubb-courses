@@ -1,4 +1,4 @@
-package ubb.courses.backend.controllers.exceptions.authentication;
+package ubb.courses.backend.controllers.exceptions.user;
 
 public class EmailException extends RuntimeException {
     public EmailException(String message) {
