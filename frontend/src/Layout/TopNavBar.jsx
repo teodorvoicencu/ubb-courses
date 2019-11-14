@@ -1,17 +1,21 @@
 import React from 'react'
 
-import { withRouter } from 'react-router-dom';
-
+import {Navbar, Nav} from 'react-bootstrap';
 
 
 function TopNavBar(){
     return (
-        <div style={{height:"40px",width:"100%",backgroundColor:"grey"}}>
-            <a href="/">Home</a>
-            <a href="/About">About</a>
-            <a href="/Info">Info</a>
-        </div>
+        <>
+        <Navbar bg="dark" variant="dark">
+            <Navbar.Brand href="/">Courses</Navbar.Brand>
+            <Nav className="mr-auto">
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/About">About</Nav.Link>
+            <Nav.Link href="/Info">Info</Nav.Link>
+            </Nav>
+        </Navbar>
+        </>
     )
 }
 
-export default withRouter(TopNavBar);
+export default TopNavBar;
