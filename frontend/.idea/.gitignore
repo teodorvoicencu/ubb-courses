@@ -1,2 +1,6 @@
 # Default ignored files
 /workspace.xml
+
+workspace.xml
+*.iws
+tasks.xml

@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="117b9ca3-6cb7-4ddc-b3a3-93fab676a127" name="Default Changelist" comment="" />
+    <list default="true" id="117b9ca3-6cb7-4ddc-b3a3-93fab676a127" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/backend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.idea/.gitignore" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -230,7 +233,8 @@
       <workItem from="1570744338162" duration="912000" />
       <workItem from="1570745270828" duration="28913000" />
       <workItem from="1571154613251" duration="15000" />
-      <workItem from="1573727435949" duration="7447000" />
+      <workItem from="1573727435949" duration="8296000" />
+      <workItem from="1573833442121" duration="340000" />
     </task>
     <task id="LOCAL-00001" summary="Finish the jwt authentication&#10;&#10;- added necessary configurations&#10;- added cors&#10;- created base entity&#10;- created the necessary data models&#10;- implemented the authentication using roles&#10;- create the controller &#10;- created register and login api calls&#10;- created dtos for login and register">
       <created>1573734962298</created>
@@ -253,7 +257,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573735885370</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Code refactor&#10;&#10;- renamed AuthenticationController to UserController&#10;- created interface for controller&#10;- moved the user exceptions into their own package">
+      <created>1573736028330</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1573736028330</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
