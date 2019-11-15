@@ -1,7 +1,11 @@
 package ubb.courses.backend.DTOs;
 
+import lombok.Getter;
+import lombok.Setter;
 import ubb.courses.backend.models.Lesson;
 
+@Getter
+@Setter
 public class LessonDTO extends BaseDTO<Lesson, Long> {
 
     private String title;

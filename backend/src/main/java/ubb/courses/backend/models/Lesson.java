@@ -1,9 +1,15 @@
 package ubb.courses.backend.models;
 
-import javax.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "lessons")
 public class Lesson extends BaseEntity<Long> implements Serializable {

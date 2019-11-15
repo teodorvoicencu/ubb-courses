@@ -1,11 +1,15 @@
 package ubb.courses.backend.DTOs;
 
+import lombok.Getter;
+import lombok.Setter;
 import ubb.courses.backend.models.Course;
 
 import java.util.Date;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+@Getter
+@Setter
 public class CourseDTO extends BaseDTO<Course, Long> {
 
     private String title;
@@ -32,29 +36,5 @@ public class CourseDTO extends BaseDTO<Course, Long> {
         course.setCreatedAt(createdAt);
         course.setLessons(lessons.stream().map(LessonDTO::getModel).collect(Collectors.toSet()));
         return course;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public Date getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public Set<LessonDTO> getLessons() {
-        return lessons;
-    }
-
-    public void setLessons(Set<LessonDTO> lessons) {
-        this.lessons = lessons;
     }
 }
