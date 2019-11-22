@@ -1,10 +1,9 @@
-name: CI
 on:
   pull_request:
     branches: "*"
   push:
     branches: "*"
-      
+name: CI      
 jobs:
   build:
     name: Js Tests
