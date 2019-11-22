@@ -1,9 +1,0 @@
-name: Frontend
-on: [push]
-jobs:
-  build:
-    name: Js Tests
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - working-directory: ../../frontend

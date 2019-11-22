@@ -1,0 +1,38 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-18.04
+    strategy:
+      matrix:
+        node_version: [10, 12]
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node_version }}
+      uses: actions/setup-node@v1
+      with:
+        version: ${{ matrix.node_version }}
+
+    - name: Install
+      run: yarn install
+      working-directory: frontend
+    
+    - name: Build
+      run: yarn build
+      working-directory: frontend
+    
+    - name: Flow
+      run: yarn flow:verify
+      working-directory: frontend
+    
+    - name: Lint
+      run: yarn lint:verify
+      working-directory: frontend
+    
+    - name: Format
+      run: yarn format:verify
+      working-directory: frontend
