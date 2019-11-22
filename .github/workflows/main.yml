@@ -21,13 +21,19 @@ jobs:
         with:
           cmd: format:verify
 
+      - run: yarn build 
+
+      - name: Verify flow
+      - uses: borales/actions-yarn@v2.0.0
+      - run: yarn flow:verify 
+
       - uses: borales/actions-yarn@v2.0.0
         name: Verify eslint
         with:
           cmd: lint:verify
 
-
       - uses: borales/actions-yarn@v2.0.0
         name: Verify flow
         with:
           cmd: flow:verify
+
