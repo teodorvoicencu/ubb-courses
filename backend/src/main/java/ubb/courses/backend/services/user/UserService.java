@@ -1,5 +1,6 @@
-package ubb.courses.backend.services;
+package ubb.courses.backend.services.user;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -31,6 +32,7 @@ public class UserService implements IUserService {
 
     private final JwtTokenProvider tokenProvider;
 
+    @Autowired
     public UserService(UserRepository userRepository, AuthorityRepository authorityRepository,
                        AuthenticationManager authenticationManager, RegisterConverter registerConverter,
                        JwtTokenProvider tokenProvider) {

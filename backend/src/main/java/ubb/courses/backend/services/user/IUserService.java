@@ -1,4 +1,4 @@
-package ubb.courses.backend.services;
+package ubb.courses.backend.services.user;
 
 import ubb.courses.backend.models.authorization.AuthorityType;
 import ubb.courses.backend.models.authorization.User;
