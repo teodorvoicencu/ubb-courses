@@ -1,9 +1,0 @@
-
-# Datasource local storage ignored files
-/dataSources/
-/dataSources.local.xml
-
-# Other config
-workspace.xml
-*.iws
-tasks.xml
