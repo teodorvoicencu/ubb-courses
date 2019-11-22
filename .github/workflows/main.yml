@@ -1,0 +1,34 @@
+name: Frontend
+on: [push]
+jobs:
+  build:
+    name: Js Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - working-directory: ../../frontend
+
+      - name: Install packages
+        uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: install
+
+      - name: Build the frontend
+        uses: borales/actions-yarn@v2.0.0
+        with: 
+          cmd: build 
+
+      - name: Verify flow
+        uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: flow:verify 
+
+      - name: Verify lint
+        uses: borales/actions-yarn@v2.0.0
+        with: 
+          cmd: lint:verify
+
+      - name: Verify format
+        uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: format:verify
