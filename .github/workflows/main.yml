@@ -10,6 +10,7 @@ jobs:
     name: Js Tests
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v1
       - working-directory: ../../frontend
       - uses: actions/checkout@v1
       - uses: borales/actions-yarn@v2.0.0
@@ -24,9 +25,12 @@ jobs:
 
       - run: yarn build 
 
+
       - name: Verify flow
-      - uses: borales/actions-yarn@v2.0.0
-      - run: yarn flow:verify 
+        uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: flow:verify 
+
 
       - uses: borales/actions-yarn@v2.0.0
         name: Verify eslint
@@ -37,4 +41,3 @@ jobs:
         name: Verify flow
         with:
           cmd: flow:verify
-
