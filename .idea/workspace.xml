@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb64a34b-082e-4cc1-9c79-b93e09b467d9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/main.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/frontend.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/frontend.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-</list>
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.jsx" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,7 +223,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="117b9ca3-6cb7-4ddc-b3a3-93fab676a127" name="Default Changelist" comment="" />
+      <changelist id="cb64a34b-082e-4cc1-9c79-b93e09b467d9" name="Default Changelist" comment="" />
       <created>1570735561326</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -235,6 +237,9 @@
       <workItem from="1571154613251" duration="15000" />
       <workItem from="1573727435949" duration="8296000" />
       <workItem from="1573833442121" duration="340000" />
+      <workItem from="1573907311413" duration="11000" />
+      <workItem from="1574244216913" duration="110000" />
+      <workItem from="1574445107798" duration="4833000" />
     </task>
     <task id="LOCAL-00001" summary="Finish the jwt authentication&#10;&#10;- added necessary configurations&#10;- added cors&#10;- created base entity&#10;- created the necessary data models&#10;- implemented the authentication using roles&#10;- create the controller &#10;- created register and login api calls&#10;- created dtos for login and register">
       <created>1573734962298</created>
