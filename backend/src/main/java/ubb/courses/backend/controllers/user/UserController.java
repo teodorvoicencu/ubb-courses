@@ -1,5 +1,6 @@
 package ubb.courses.backend.controllers.user;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,17 +15,18 @@ import ubb.courses.backend.dtos.authentication.RegisterDTO;
 
 import ubb.courses.backend.models.authorization.User;
 
-import ubb.courses.backend.services.IUserService;
+import ubb.courses.backend.services.user.IUserService;
 
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/api/auth")
+@RequestMapping("/auth")
 public class UserController implements IUserController {
 
     private final IUserService userService;
     private final IDTOConverter<RegisterDTO, User> registerConverter;
 
+    @Autowired
     public UserController(IUserService userService, RegisterConverter registerConverter) {
         this.userService = userService;
         this.registerConverter = registerConverter;
