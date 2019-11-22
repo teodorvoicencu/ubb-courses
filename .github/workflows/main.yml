@@ -2,15 +2,11 @@ name: CI
 
 on:
   pull_request:
-    branches-ignore:
-      - master
-
-  push:
-    branches-ignore:
-      - master
-
+    branches: "*"
+      
 jobs:
-  js_test:
+  build:
+    name: Js Tests
     runs-on: ubuntu-latest
     steps:
       - working-directory: ../../frontend
@@ -35,4 +31,3 @@ jobs:
         name: Verify flow
         with:
           cmd: flow:verify
-
