@@ -1,26 +1,31 @@
 // @flow
+import * as React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import React from 'react';
+import NavbarTop from '../navbar/navbar';
+import Routes from '../routes/routes';
 
-import logo from '../logo.svg';
-import './styles/app.scss';
+const App = (): React.Node => {
+    const routes = Routes.map((route, index) => {
+        return route.component ? (
+            <Route
+                key={index}
+                path={route.path}
+                exact={route.exact}
+                name={route.name}
+                component={route.component}
+            />
+        ) : null;
+    });
 
-function App() {
     return (
-        <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
-            </header>
-        </div>
+        <BrowserRouter>
+            <React.Suspense fallback={<div>Loading...</div>}>
+                <NavbarTop />
+                <Switch>{routes}</Switch>
+            </React.Suspense>
+        </BrowserRouter>
     );
-}
+};
 
 export default App;
