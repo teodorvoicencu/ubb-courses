@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react';
-import { Button, Form, FormControl, Navbar } from 'react-bootstrap';
+import { Navbar } from 'react-bootstrap';
 import Nav from 'react-bootstrap/Nav';
 import { NavLink, useLocation } from 'react-router-dom';
 
@@ -28,10 +28,11 @@ const NavbarTop = (): React.Node => {
         <Navbar bg="light" variant="light">
             <Navbar.Brand>UBB Courses</Navbar.Brand>
             <Nav className="mr-auto">{links}</Nav>
-            <Form inline>
-                <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                <Button variant="outline-info">Search</Button>
-            </Form>
+            <Nav>
+                <NavLink to={'/login'} className="nav-link">
+                    Login
+                </NavLink>
+            </Nav>
         </Navbar>
     );
 };
