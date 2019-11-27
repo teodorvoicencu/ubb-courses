@@ -8,7 +8,7 @@ import ubb.courses.backend.dtos.courses.CourseDTO;
 import ubb.courses.backend.models.Course;
 import ubb.courses.backend.services.course.ICourseService;
 
-import java.util.ArrayList;
+import javax.validation.Valid;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
@@ -37,7 +37,14 @@ public class CourseController implements ICourseController {
     }
 
     @PostMapping
-    public  void addCourse(@RequestBody CourseDTO course){
+    public  void addCourse(@RequestBody CourseDTO course) {
         this.courseService.addCourse(this.courseConverter.createFrom(course));
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<CourseDTO> updateCourse(@PathVariable Integer id, @Valid @RequestBody CourseDTO courseDTO) {
+        Course course = this.courseConverter.createFrom(courseDTO);
+        course.setId(id);
+        return ResponseEntity.ok(this.courseConverter.createFrom(this.courseService.updateCourse(course)));
     }
 }
