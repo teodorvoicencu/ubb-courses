@@ -2,10 +2,12 @@ package ubb.courses.backend.services.course;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import ubb.courses.backend.controllers.exceptions.course.CourseException;
 import ubb.courses.backend.models.Course;
 import ubb.courses.backend.repositories.CourseRepository;
 
 import java.util.Collection;
+import java.util.Optional;
 
 @Service
 public class CourseService implements ICourseService {
@@ -17,7 +19,12 @@ public class CourseService implements ICourseService {
         this.courseRepository = courseRepository;
     }
 
-    public Collection<Course> getAllCourses(){
+    public Collection<Course> getAllCourses() {
         return this.courseRepository.findAll();
+    }
+
+    @Override
+    public Course getCourseById(Integer id) {
+        return this.courseRepository.findById(id).orElseThrow(() -> new CourseException("Course not found!"));
     }
 }

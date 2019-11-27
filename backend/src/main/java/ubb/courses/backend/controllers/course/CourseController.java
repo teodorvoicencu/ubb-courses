@@ -3,6 +3,7 @@ package ubb.courses.backend.controllers.course;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ubb.courses.backend.dtos.courses.CourseConverter;
@@ -31,5 +32,10 @@ public class CourseController implements ICourseController {
     public ResponseEntity<Collection<CourseDTO>> getAllCourses() {
         return ResponseEntity.ok(this.courseService.getAllCourses().stream()
                 .map(this.courseConverter::createFrom).collect(Collectors.toList()));
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<CourseDTO> getCourseById(@PathVariable Integer id) {
+        return ResponseEntity.ok(this.courseConverter.createFrom(this.courseService.getCourseById(id)));
     }
 }
