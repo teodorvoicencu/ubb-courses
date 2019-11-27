@@ -42,9 +42,9 @@ public class CourseController implements ICourseController {
     }
 
     @PutMapping("/{id}")
-    public void updateCourse(@PathVariable Integer id, @Valid @RequestBody CourseDTO course) {
-        Course updatedCourse = this.courseConverter.createFrom(course);
-        updatedCourse.setId(id);
-        this.courseService.updateCourse(updatedCourse);
+    public ResponseEntity<CourseDTO> updateCourse(@PathVariable Integer id, @Valid @RequestBody CourseDTO courseDTO) {
+        Course course = this.courseConverter.createFrom(courseDTO);
+        course.setId(id);
+        return ResponseEntity.ok(this.courseConverter.createFrom(this.courseService.updateCourse(course)));
     }
 }

@@ -11,5 +11,5 @@ public interface ICourseService {
 
     void addCourse(Course course);
 
-    void updateCourse(Course course);
+    Course updateCourse(Course course);
 }
