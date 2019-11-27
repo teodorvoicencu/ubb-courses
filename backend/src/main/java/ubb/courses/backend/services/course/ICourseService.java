@@ -9,5 +9,5 @@ public interface ICourseService {
 
     Course getCourseById(Integer id);
 
-    void addCourse(Course c);
+    void addCourse(Course course);
 }

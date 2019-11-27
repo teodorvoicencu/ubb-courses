@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
  * Global configurations for the project.
@@ -17,6 +18,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 })
 @EntityScan(basePackages = {"ubb.courses.backend.models"})
 @EnableJpaRepositories(basePackages = {"ubb.courses.backend.repositories"})
+@EnableTransactionManagement
 public class ManagementConfig {
     @Bean
     public ModelMapper modelMapper() {
