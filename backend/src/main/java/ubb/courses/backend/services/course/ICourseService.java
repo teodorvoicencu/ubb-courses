@@ -9,7 +9,9 @@ public interface ICourseService {
 
     Course getCourseById(Integer id);
 
-    void addCourse(Course course);
+    Course addCourse(Course course);
 
     void deleteCourse(Integer id);
+
+    Course updateCourse(Course course);
 }
