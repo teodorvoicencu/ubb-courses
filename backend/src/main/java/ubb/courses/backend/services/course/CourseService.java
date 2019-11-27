@@ -31,4 +31,14 @@ public class CourseService implements ICourseService {
     @Override
     @Transactional
     public void addCourse(Course course){this.courseRepository.save(course);}
+
+    @Override
+    @Transactional
+    public void updateCourse(Course course) {
+        if (this.courseRepository.existsById(course.getId())) {
+            this.courseRepository.save(course);
+        } else {
+            throw new CourseException("Course not found!");
+        }
+    }
 }

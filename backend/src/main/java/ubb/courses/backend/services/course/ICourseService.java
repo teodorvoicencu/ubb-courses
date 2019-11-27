@@ -10,4 +10,6 @@ public interface ICourseService {
     Course getCourseById(Integer id);
 
     void addCourse(Course course);
+
+    void updateCourse(Course course);
 }
