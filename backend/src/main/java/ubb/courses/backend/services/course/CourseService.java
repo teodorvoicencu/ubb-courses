@@ -7,7 +7,6 @@ import ubb.courses.backend.models.Course;
 import ubb.courses.backend.repositories.CourseRepository;
 
 import java.util.Collection;
-import java.util.Optional;
 
 @Service
 public class CourseService implements ICourseService {
@@ -27,4 +26,7 @@ public class CourseService implements ICourseService {
     public Course getCourseById(Integer id) {
         return this.courseRepository.findById(id).orElseThrow(() -> new CourseException("Course not found!"));
     }
+
+    @Override
+    public void addCourse(Course c){this.courseRepository.save(c);}
 }

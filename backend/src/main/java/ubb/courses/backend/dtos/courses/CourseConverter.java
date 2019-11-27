@@ -4,6 +4,8 @@ import org.springframework.stereotype.Component;
 import ubb.courses.backend.dtos.IDTOConverter;
 import ubb.courses.backend.models.Course;
 
+import java.util.Date;
+
 @Component
 public class CourseConverter implements IDTOConverter<CourseDTO, Course> {
 
@@ -22,6 +24,9 @@ public class CourseConverter implements IDTOConverter<CourseDTO, Course> {
         course.setId(dto.getId());
         course.name = dto.name;
         course.description = dto.description;
+        Date date = new Date();
+        course.setCreatedDate(date);
+        course.setModifiedDate(date);
         return course;
     }
 }
