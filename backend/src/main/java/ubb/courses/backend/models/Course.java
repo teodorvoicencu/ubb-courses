@@ -13,6 +13,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 @Entity
@@ -25,9 +27,12 @@ import java.util.Date;
 public class Course extends BaseEntity {
 
     @Column(name = "name", nullable = false)
+    @NotNull
+    @Size(min=4, max = 32)
     public String name;
 
     @Column(name = "description", nullable = false)
+    @NotNull
     public String description;
 
     @Column(name = "created_date", nullable = false, updatable = false)

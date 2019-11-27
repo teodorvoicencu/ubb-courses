@@ -8,4 +8,6 @@ public interface ICourseService {
     Collection<Course> getAllCourses();
 
     Course getCourseById(Integer id);
+
+    void addCourse(Course course);
 }
