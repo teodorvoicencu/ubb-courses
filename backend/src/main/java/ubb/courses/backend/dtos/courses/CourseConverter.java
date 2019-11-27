@@ -24,9 +24,6 @@ public class CourseConverter implements IDTOConverter<CourseDTO, Course> {
         course.setId(dto.getId());
         course.name = dto.name;
         course.description = dto.description;
-        Date date = new Date();
-        course.setCreatedDate(date);
-        course.setModifiedDate(date);
         return course;
     }
 }
