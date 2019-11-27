@@ -13,8 +13,6 @@ public class CourseConverter implements IDTOConverter<CourseDTO, Course> {
         courseDto.setId(entity.getId());
         courseDto.name = entity.name;
         courseDto.description = entity.getDescription();
-        courseDto.setCreatedDate(entity.getCreatedDate());
-        courseDto.setModifiedDate(entity.getModifiedDate());
         return courseDto;
     }
 
@@ -24,8 +22,6 @@ public class CourseConverter implements IDTOConverter<CourseDTO, Course> {
         course.setId(dto.getId());
         course.name = dto.name;
         course.description = dto.description;
-        course.setCreatedDate(dto.getCreatedDate());
-        course.setModifiedDate(dto.getModifiedDate());
         return course;
     }
 }

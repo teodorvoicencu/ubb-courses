@@ -1,9 +1,10 @@
 package ubb.courses.backend.controllers.course;
 
+import org.springframework.http.ResponseEntity;
 import ubb.courses.backend.dtos.courses.CourseDTO;
 
-import java.util.ArrayList;
+import java.util.Collection;
 
 public interface ICourseController {
-    public ArrayList<CourseDTO> GetAllCourses();
+    ResponseEntity<Collection<CourseDTO>> getAllCourses();
 }
