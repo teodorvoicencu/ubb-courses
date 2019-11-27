@@ -37,14 +37,17 @@ public class CourseController implements ICourseController {
     }
 
     @PostMapping
-    public ResponseEntity<Course> addCourse(@RequestBody CourseDTO course) {
-        return ResponseEntity.ok(this.courseService.addCourse(this.courseConverter.createFrom(course)));
+    public ResponseEntity<CourseDTO> addCourse(@RequestBody CourseDTO course) {
+        return ResponseEntity.ok(
+                this.courseConverter.createFrom(this.courseService.addCourse(this.courseConverter.createFrom(course)))
+        );
     }
 
     @DeleteMapping("/{id}")
     public void deleteCourse(@PathVariable Integer id) {
         this.courseService.deleteCourse(id);
     }
+
     @PutMapping("/{id}")
     public ResponseEntity<CourseDTO> updateCourse(@PathVariable Integer id, @Valid @RequestBody CourseDTO courseDTO) {
         Course course = this.courseConverter.createFrom(courseDTO);
