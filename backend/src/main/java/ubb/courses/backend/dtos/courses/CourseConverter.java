@@ -4,8 +4,6 @@ import org.springframework.stereotype.Component;
 import ubb.courses.backend.dtos.IDTOConverter;
 import ubb.courses.backend.models.Course;
 
-import java.util.Date;
-
 @Component
 public class CourseConverter implements IDTOConverter<CourseDTO, Course> {
 
