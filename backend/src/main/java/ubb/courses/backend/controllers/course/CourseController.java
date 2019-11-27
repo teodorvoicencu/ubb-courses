@@ -24,7 +24,7 @@ public class CourseController implements ICourseController {
         this.courseConverter = courseConverter;
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public ArrayList<CourseDTO> GetAllCourses(){
         ArrayList<CourseDTO> courseDTOs = new ArrayList<>();
         this.courseService.getAllCourses().forEach(course -> courseDTOs.add(courseConverter.createFrom(course)));
