@@ -30,5 +30,17 @@ public class CourseService implements ICourseService {
 
     @Override
     @Transactional
-    public void addCourse(Course course){this.courseRepository.save(course);}
+    public void addCourse(Course course) {
+        this.courseRepository.save(course);
+    }
+
+    @Override
+    @Transactional
+    public void deleteCourse(Integer id) {
+        if (this.courseRepository.existsById(id)) {
+            this.courseRepository.deleteById(id);
+        } else {
+            throw new CourseException("Course not found!");
+        }
+    }
 }
