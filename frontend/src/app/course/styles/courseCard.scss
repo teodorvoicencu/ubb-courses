@@ -1,0 +1,15 @@
+hr {
+  margin-left: -1.25rem;
+  margin-right: -1.25rem;
+}
+
+.card {
+  margin: 8px 8px;
+  cursor: pointer;
+  min-width: 200px;
+  width: 100%;
+}
+
+.card:hover {
+  background-color: lightgray;
+}
