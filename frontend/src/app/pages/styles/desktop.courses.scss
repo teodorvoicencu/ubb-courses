@@ -1,5 +1,6 @@
+@import "../../theme/variables";
 .padding-top {
-    padding-top: 16px;
+    padding-top: $ternary-padding;
 }
 
 .page-width-wrapper {
