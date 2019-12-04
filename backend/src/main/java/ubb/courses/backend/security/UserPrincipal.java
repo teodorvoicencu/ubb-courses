@@ -23,8 +23,6 @@ public class UserPrincipal implements UserDetails {
 
     private String name;
 
-    private String username;
-
     @JsonIgnore
     private String email;
 
@@ -49,7 +47,6 @@ public class UserPrincipal implements UserDetails {
         return new UserPrincipal(
                 user.getId(),
                 user.getName(),
-                user.getUsername(),
                 user.getEmail(),
                 user.getPassword(),
                 user.getAccountExpired(),
@@ -68,13 +65,9 @@ public class UserPrincipal implements UserDetails {
         return name;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
     @Override
     public String getUsername() {
-        return username;
+        return email;
     }
 
     @Override

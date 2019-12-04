@@ -25,7 +25,6 @@ public class RegisterConverter implements IDTOConverter<RegisterDTO, User> {
     public User createFrom(RegisterDTO dto) {
         User user = new User();
         user.setName(dto.getName());
-        user.setUsername(dto.getUsername());
         user.setEmail(dto.getEmail());
         user.setPassword(passwordEncoder.encode(dto.getPassword()));
         return user;

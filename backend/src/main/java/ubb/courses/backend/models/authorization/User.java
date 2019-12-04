@@ -31,9 +31,6 @@ public class User extends BaseEntity {
     @Column
     private String email;
 
-    @Column(length = 16)
-    private String username;
-
     @Column
     private String password;
 
@@ -53,10 +50,9 @@ public class User extends BaseEntity {
             CascadeType.ALL}, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<UserAuthority> userAuthorities = new HashSet<>();
 
-    public User(String name, String email, String username, String password) {
+    public User(String name, String email, String password) {
         this.name = name;
         this.email = email;
-        this.username = username;
         this.password = password;
     }
 }
