@@ -6,7 +6,7 @@ import CourseList from '../course/coursesList';
 
 const CoursePage = (): React.Node => {
     return (
-        <div className={'page-width-wrapper mx-2 padding-top'}>
+        <div className={' mx-auto page-width-wrapper mx-2 padding-top'}>
             <CourseList />
         </div>
     );
