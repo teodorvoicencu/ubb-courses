@@ -8,11 +8,6 @@ import ubb.courses.backend.controllers.responses.ApiResponse;
 
 @ControllerAdvice
 public class UserExceptionController {
-    @ExceptionHandler(value = UsernameException.class)
-    public ResponseEntity<Object> usernameException(UsernameException exception) {
-        return new ResponseEntity<>(new ApiResponse(false, exception.getMessage()), HttpStatus.BAD_REQUEST);
-    }
-
     @ExceptionHandler(value = EmailException.class)
     public ResponseEntity<Object> emailException(EmailException exception) {
         return new ResponseEntity<>(new ApiResponse(false, exception.getMessage()), HttpStatus.BAD_REQUEST);

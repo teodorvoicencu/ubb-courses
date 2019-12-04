@@ -8,7 +8,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import ubb.courses.backend.controllers.exceptions.AppException;
 import ubb.courses.backend.controllers.exceptions.user.EmailException;
-import ubb.courses.backend.controllers.exceptions.user.UsernameException;
 import ubb.courses.backend.dtos.authentication.RegisterConverter;
 import ubb.courses.backend.models.authorization.Authority;
 import ubb.courses.backend.models.authorization.AuthorityType;
@@ -59,9 +58,6 @@ public class UserService implements IUserService {
 
     @Override
     public void register(User user, AuthorityType authority) {
-        if (userRepository.existsByUsername(user.getUsername())) {
-            throw new UsernameException("Username is already taken!");
-        }
 
         if (userRepository.existsByEmail(user.getEmail())) {
             throw new EmailException("Email address already in use!");
