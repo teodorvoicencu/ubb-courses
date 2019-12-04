@@ -12,24 +12,24 @@ const mockCourses: Array<Course> = [
         description: 'Description 1',
     },
     {
-        id: 1,
-        name: 'Course 1',
+        id: 2,
+        name: 'Course 2',
         description: 'Description 1',
     },
-    { id: 1, name: 'Course 1', description: 'Description 1' },
+    { id: 3, name: 'Course 3', description: 'Description 1' },
     {
-        id: 1,
-        name: 'Course 1',
+        id: 4,
+        name: 'Course 4',
         description: 'Description 1',
     },
-    { id: 1, name: 'Course 1', description: 'Description 1' },
+    { id: 5, name: 'Course 5', description: 'Description 1' },
 ];
 
 const CoursesList = (): React.Node => {
     return mockCourses.map(course => {
         return (
-            <Row>
-                <CourseCard id={course.$id} name={course.name} description={course.description} />
+            <Row key={course.id}>
+                <CourseCard course={course} />
             </Row>
         );
     });

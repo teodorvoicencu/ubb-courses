@@ -1,12 +1,8 @@
-hr {
-    margin-left: -1.25rem;
-    margin-right: -1.25rem;
-}
+@import '../../theme/variables';
 
 .card {
-    margin: 8px 8px;
+    margin: $ternary-margin $ternary-margin;
     cursor: pointer;
-    min-width: 200px;
     width: 100%;
 }
 
