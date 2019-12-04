@@ -27,6 +27,20 @@ const RegisterFormInputs = (props: Props): React.Node => (
             </Form.Group>
         </Form.Row>
         <Form.Row>
+            <Form.Group controlId="name" className="form-input">
+                <Form.Label>Name</Form.Label>
+                <Form.Control
+                    type="name"
+                    name="name"
+                    value={props.values.name}
+                    onChange={props.handleChange}
+                    isValid={!props.errors.name && !!props.values.name}
+                    isInvalid={!!props.errors.name && !!props.values.name}
+                />
+                <Form.Control.Feedback type={'invalid'}>{props.errors.name}</Form.Control.Feedback>
+            </Form.Group>
+        </Form.Row>
+        <Form.Row>
             <Form.Group controlId="authority" className="form-input">
                 <Form.Label>You are a</Form.Label>
                 <Form.Control

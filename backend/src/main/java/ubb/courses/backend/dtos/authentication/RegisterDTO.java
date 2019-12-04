@@ -6,7 +6,6 @@ import ubb.courses.backend.dtos.DTO;
 import ubb.courses.backend.models.authorization.AuthorityType;
 
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -16,13 +15,11 @@ import javax.validation.constraints.NotNull;
 public class RegisterDTO extends DTO {
 
     @NotNull
+    @Length(max = 32, min = 4)
     private String name;
 
     @Email
     private String email;
-
-    @Length(max = 16)
-    private String username;
 
     @NotNull
     @Length(max = 16, min = 8)

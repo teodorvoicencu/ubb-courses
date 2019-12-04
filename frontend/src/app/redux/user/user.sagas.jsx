@@ -16,3 +16,21 @@ export function* login({ email, password }) {
         yield put(UserActions.loginError('Invalid username or password!'));
     }
 }
+
+export function* register({ email, name, authority, password }) {
+    try {
+        yield put(UserActions.registerLoading(true));
+        const response = yield call(axios.post, '/auth/register/', {
+            email,
+            name,
+            authority,
+            password,
+        });
+        if (response.status === 200) {
+            yield put(UserActions.registerSuccess());
+        }
+        yield put(UserActions.registerLoading(false));
+    } catch (error) {
+        yield put(UserActions.registerError('Email address already in use!'));
+    }
+}
