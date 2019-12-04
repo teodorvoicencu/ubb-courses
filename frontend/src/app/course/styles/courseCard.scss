@@ -1,0 +1,11 @@
+@import '../../theme/variables';
+
+.card {
+    margin: $ternary-margin $ternary-margin;
+    cursor: pointer;
+    width: 100%;
+}
+
+.card:hover {
+    background-color: lightgray;
+}
