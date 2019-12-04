@@ -1,10 +1,12 @@
 // @flow
 import * as React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
 import NavbarTop from './navbar/navbar';
 import Routes from './routes/routes';
 import SuspenseFallback from './suspense/suspenseFallback';
+import { store } from './config/store.config';
 
 const App = (): React.Node => {
     const routes = Routes.map((route, index) => {
@@ -20,12 +22,14 @@ const App = (): React.Node => {
     });
 
     return (
-        <BrowserRouter>
-            <React.Suspense fallback={<SuspenseFallback />}>
-                <NavbarTop />
-                <Switch>{routes}</Switch>
-            </React.Suspense>
-        </BrowserRouter>
+        <Provider store={store}>
+            <BrowserRouter>
+                <React.Suspense fallback={<SuspenseFallback />}>
+                    <NavbarTop />
+                    <Switch>{routes}</Switch>
+                </React.Suspense>
+            </BrowserRouter>
+        </Provider>
     );
 };
 
