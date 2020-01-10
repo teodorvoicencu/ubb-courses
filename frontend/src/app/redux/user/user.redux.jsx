@@ -1,6 +1,6 @@
-import {createReducer, createActions} from 'reduxsauce';
+import { createReducer, createActions } from 'reduxsauce';
 
-const {Types, Creators} = createActions({
+const { Types, Creators } = createActions({
     init: [],
     initSuccess: ['data'],
     initFailure: [],
@@ -31,13 +31,18 @@ const INITIAL_STATE = {
 };
 
 export const userReducer = createReducer(INITIAL_STATE, {
-    [Types.INIT_SUCCESS]: (state, {data}) => ({...state, ...data}),
-    [Types.LOGIN_LOADING]: (state, {value}) => ({...state, loading: value}),
-    [Types.LOGIN_SUCCESS]: (state, {data}) => ({...state, ...data}),
-    [Types.LOGIN_FAILURE]: (state, {data}) => ({...state, error: data}),
-    [Types.REGISTER_LOADING]: (state, {value}) => ({...state, loading: value}),
-    [Types.REGISTER_SUCCESS]: state => ({...state, registered: true}),
-    [Types.REGISTER_FAILURE]: (state, {data}) => ({...state, error: data}),
-    [Types.LOGOUT_SUCCESS]: state => ({...state, loggedIn: false,
-        name: null, username: null, authorities: []}),
+    [Types.INIT_SUCCESS]: (state, { data }) => ({ ...state, ...data }),
+    [Types.LOGIN_LOADING]: (state, { value }) => ({ ...state, loading: value }),
+    [Types.LOGIN_SUCCESS]: (state, { data }) => ({ ...state, ...data }),
+    [Types.LOGIN_FAILURE]: (state, { data }) => ({ ...state, error: data }),
+    [Types.REGISTER_LOADING]: (state, { value }) => ({ ...state, loading: value }),
+    [Types.REGISTER_SUCCESS]: state => ({ ...state, registered: true }),
+    [Types.REGISTER_FAILURE]: (state, { data }) => ({ ...state, error: data }),
+    [Types.LOGOUT_SUCCESS]: state => ({
+        ...state,
+        loggedIn: false,
+        name: null,
+        username: null,
+        authorities: [],
+    }),
 });

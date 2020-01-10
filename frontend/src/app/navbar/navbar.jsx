@@ -1,14 +1,13 @@
 // @flow
 import * as React from 'react';
-import {Navbar} from 'react-bootstrap';
+import { Navbar } from 'react-bootstrap';
 import Nav from 'react-bootstrap/Nav';
-import {NavLink, useLocation} from 'react-router-dom';
-import {useSelector} from 'react-redux';
+import { NavLink, useLocation } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import NavRoutes from '../routes/navRoutes';
 
 import UserNav from './userNav';
-
 
 const NavbarTop = (): React.Node => {
     const location = useLocation();
@@ -41,7 +40,9 @@ const NavbarTop = (): React.Node => {
                             Login
                         </NavLink>
                     </Nav>
-                ) : <UserNav/>}
+                ) : (
+                    <UserNav />
+                )}
             </Nav>
         </Navbar>
     );
