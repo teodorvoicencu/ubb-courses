@@ -28,7 +28,7 @@
     "eject": "react-scripts eject",
     "flow": "flow",
     "lint": "eslint -c .eslintrc --ext .jsx --ext .js --color --fix .",
-    "format": "prettier --config .prettierrc --write **/*.{js,jsx,css,scss} --loglevel=warn",
+    "format": "prettier --config .prettierrc --write \"**/*.{js,jsx,css,scss}\" --loglevel=warn",
     "fix": "yarn format && yarn lint && yarn flow",
     "flow:verify": "flow check",
     "lint:verify": "eslint -c .eslintrc --ext .jsx --ext .js --color .",
