@@ -1,4 +1,3 @@
-// @flow
 import { call, put } from 'redux-saga/effects';
 import axios from 'axios';
 
@@ -8,11 +7,23 @@ import UserActions from './user.redux';
 
 export function* init() {
     try {
-        const token = yield call([localStorage, localStorage.getItem], 'token');
-        if (token) {
-            const data = parseJWT(token);
+        // Get the access token and from the local storage
+        const accessToken = yield call([localStorage, localStorage.getItem], 'accessToken');
+        const tokenType = yield call([localStorage, localStorage.getItem], 'tokenType');
+
+        // If it is present take the data from it
+        if (accessToken) {
+            const data = parseJWT(accessToken);
+            // Verify if it is not expired
             if (data.exp > new Date().getTime() / 1000) {
-                yield put(UserActions.initSuccess({ loggedIn: true, ...data }));
+                // Add the authorization header to axios
+                axios.defaults.headers.common.Authorization = `${tokenType} ${accessToken}`;
+                yield put(
+                    UserActions.initSuccess({
+                        loggedIn: true,
+                        ...data,
+                    }),
+                );
                 return;
             }
         }
@@ -29,10 +40,22 @@ export function* login({ email, password }) {
         yield put(UserActions.loginLoading(true));
         const response = yield call(axios.post, '/auth/login/', { email, password });
         if (response.status === 200) {
-            const token = response.data.accessToken;
-            yield call([localStorage, localStorage.setItem], 'token', token);
-            const data = parseJWT(token);
-            yield put(UserActions.loginSuccess({ loggedIn: true, ...data }));
+            const { accessToken, tokenType } = response.data;
+
+            // Add authorization header for backend to know the current logged in user
+            axios.defaults.headers.common.Authorization = `${tokenType} ${accessToken}`;
+
+            // Save access token and type in localstorage
+            yield call([localStorage, localStorage.setItem], 'accessToken', accessToken);
+            yield call([localStorage, localStorage.setItem], 'tokenType', tokenType);
+
+            const data = parseJWT(accessToken);
+            yield put(
+                UserActions.loginSuccess({
+                    loggedIn: true,
+                    ...data,
+                }),
+            );
         }
         yield put(UserActions.loginLoading(false));
     } catch (error) {
@@ -60,7 +83,13 @@ export function* register({ email, name, authority, password }) {
 
 export function* logout() {
     try {
-        yield call([localStorage, localStorage.removeItem], 'token');
+        // Remove the JWT from local storage
+        yield call([localStorage, localStorage.removeItem], 'accessToken');
+        yield call([localStorage, localStorage.removeItem], 'tokenType');
+
+        // Remove the authorization header to be completely logged out
+        delete axios.defaults.headers.common.Authorization;
+
         yield put(UserActions.logoutSuccess());
     } catch (error) {
         // eslint-disable-next-line no-console
