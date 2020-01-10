@@ -1,13 +1,19 @@
 // @flow
 import * as React from 'react';
-import { Navbar } from 'react-bootstrap';
+import {Navbar} from 'react-bootstrap';
 import Nav from 'react-bootstrap/Nav';
-import { NavLink, useLocation } from 'react-router-dom';
+import {NavLink, useLocation} from 'react-router-dom';
+import {useSelector} from 'react-redux';
 
 import NavRoutes from '../routes/navRoutes';
 
+import UserNav from './userNav';
+
+
 const NavbarTop = (): React.Node => {
     const location = useLocation();
+
+    const isLoggedIn = useSelector(state => state.user.loggedIn);
 
     const links = Object.keys(NavRoutes).map((key, index) => {
         const route = NavRoutes[key];
@@ -29,9 +35,13 @@ const NavbarTop = (): React.Node => {
             <Navbar.Brand>UBB Courses</Navbar.Brand>
             <Nav className="mr-auto">{links}</Nav>
             <Nav>
-                <NavLink to={'/login'} className="nav-link">
-                    Login
-                </NavLink>
+                {!isLoggedIn ? (
+                    <Nav>
+                        <NavLink to={'/login'} className="nav-link">
+                            Login
+                        </NavLink>
+                    </Nav>
+                ) : <UserNav/>}
             </Nav>
         </Navbar>
     );
