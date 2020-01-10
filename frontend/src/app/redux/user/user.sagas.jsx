@@ -2,18 +2,41 @@
 import { call, put } from 'redux-saga/effects';
 import axios from 'axios';
 
+import parseJWT from '../../util/JWT';
+
 import UserActions from './user.redux';
+
+export function* init() {
+    try {
+        const token = yield call([localStorage, localStorage.getItem], 'token');
+        if (token) {
+            const data = parseJWT(token);
+            if (data.exp > new Date().getTime() / 1000) {
+                yield put(UserActions.initSuccess({ loggedIn: true, ...data }));
+                return;
+            }
+        }
+        yield put(UserActions.initSuccess({ loggedIn: false }));
+    } catch (error) {
+        // eslint-disable-next-line no-console
+        console.log(error);
+        yield put(UserActions.initFailure());
+    }
+}
 
 export function* login({ email, password }) {
     try {
         yield put(UserActions.loginLoading(true));
         const response = yield call(axios.post, '/auth/login/', { email, password });
         if (response.status === 200) {
-            yield put(UserActions.loginSuccess({ ...response.data, loggedIn: true }));
+            const token = response.data.accessToken;
+            yield call([localStorage, localStorage.setItem], 'token', token);
+            const data = parseJWT(token);
+            yield put(UserActions.loginSuccess({ loggedIn: true, ...data }));
         }
         yield put(UserActions.loginLoading(false));
     } catch (error) {
-        yield put(UserActions.loginError('Invalid username or password!'));
+        yield put(UserActions.loginFailure('Invalid username or password!'));
     }
 }
 
@@ -31,6 +54,17 @@ export function* register({ email, name, authority, password }) {
         }
         yield put(UserActions.registerLoading(false));
     } catch (error) {
-        yield put(UserActions.registerError('Email address already in use!'));
+        yield put(UserActions.registerFailure('Email address already in use!'));
+    }
+}
+
+export function* logout() {
+    try {
+        yield call([localStorage, localStorage.removeItem], 'token');
+        yield put(UserActions.logoutSuccess());
+    } catch (error) {
+        // eslint-disable-next-line no-console
+        console.log(error);
+        yield put(UserActions.logoutFailure());
     }
 }

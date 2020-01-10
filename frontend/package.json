@@ -28,12 +28,12 @@
     "eject": "react-scripts eject",
     "flow": "flow",
     "lint": "eslint -c .eslintrc --ext .jsx --ext .js --color --fix .",
-    "format": "prettier --config .prettierrc --write **/*.{js,jsx,css,scss} --loglevel=warn",
+    "format": "prettier --config .prettierrc --write \"**/*.{js,jsx,css,scss}\" --loglevel=warn",
     "fix": "yarn format && yarn lint && yarn flow",
     "flow:verify": "flow check",
     "lint:verify": "eslint -c .eslintrc --ext .jsx --ext .js --color .",
     "format:verify": "prettier --config .prettierrc --check **/*.{js,jsx,css,scss}",
-    "yarn veirfy": "yarn format:verify && yarn lint:verify && yarn flow:verify"
+    "verify": "yarn format:verify && yarn lint:verify && yarn flow:verify"
   },
   "eslintConfig": {
     "extends": "react-app"

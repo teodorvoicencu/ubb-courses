@@ -15,7 +15,8 @@
   "plugins": [
     "flowtype",
     "react-redux",
-    "redux-saga"
+    "redux-saga",
+    "prettier"
   ],
   "settings": {
     "import/resolver": {
@@ -35,6 +36,7 @@
     "jest": true
   },
   "rules": {
+    "prettier/prettier": "error",
     "max-len": [
       "error",
       {

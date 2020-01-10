@@ -7,8 +7,13 @@ import NavbarTop from './navbar/navbar';
 import Routes from './routes/routes';
 import SuspenseFallback from './suspense/suspenseFallback';
 import { store } from './config/store.config';
+import { UserActions } from './redux/user';
 
 const App = (): React.Node => {
+    React.useEffect(() => {
+        store.dispatch(UserActions.init());
+    });
+
     const routes = Routes.map((route, index) => {
         return route.component ? (
             <Route
