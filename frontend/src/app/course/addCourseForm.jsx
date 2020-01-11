@@ -18,7 +18,7 @@ const AddCourseForm = (): React.Node => {
     const onAddCourse = React.useCallback(
         values => {
             const { name, description } = values;
-            dispatch(CourseActions.addCourse(name, description));
+            dispatch(CourseActions.createCourse(name, description));
         },
         [dispatch],
     );
