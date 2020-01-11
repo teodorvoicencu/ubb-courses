@@ -1,7 +1,6 @@
 package ubb.courses.backend.services.security;
 
 import org.springframework.security.core.GrantedAuthority;
-import ubb.courses.backend.models.authorization.User;
 
 import java.util.Collection;
 
