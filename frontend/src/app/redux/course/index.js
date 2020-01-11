@@ -1,4 +1,12 @@
 import CourseActions, { CourseTypes, courseReducer } from './course.redux';
-import { createCourse } from './course.sagas';
+import { createCourse, updateCourse, fetchCourse, deleteCourse } from './course.sagas';
 
-export { CourseActions, CourseTypes, courseReducer, createCourse };
+export {
+    CourseActions,
+    CourseTypes,
+    courseReducer,
+    createCourse,
+    updateCourse,
+    fetchCourse,
+    deleteCourse,
+};

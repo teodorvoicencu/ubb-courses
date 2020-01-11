@@ -1,9 +1,18 @@
 import { createReducer, createActions } from 'reduxsauce';
 
 const { Types, Creators } = createActions({
+    fetchCourse: ['id'],
+    fetchCourseSuccess: ['data'],
+    fetchCourseFailure: [],
     createCourse: ['name', 'description'],
-    createCourseSuccess: ['data'],
+    createCourseSuccess: [],
     createCourseFailure: [],
+    updateCourse: ['id', 'name', 'description'],
+    updateCourseSuccess: [],
+    updateCourseFailure: [],
+    deleteCourse: ['id'],
+    deleteCourseSuccess: [],
+    deleteCourseFailure: [],
     loading: ['value'],
 });
 
@@ -18,4 +27,5 @@ const INITIAL_STATE = {
 
 export const courseReducer = createReducer(INITIAL_STATE, {
     [Types.LOADING]: (state, { value }) => ({ ...state, loading: value }),
+    [Types.FETCH_COURSE_SUCCESS]: (state, { data }) => ({ ...state, data }),
 });
