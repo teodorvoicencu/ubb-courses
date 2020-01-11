@@ -1,0 +1,17 @@
+@import '../../theme/variables';
+
+.courseExtra {
+  padding: $secondary-padding;
+  justify-content: center;
+}
+
+.courseExtraItem {
+  display: flex;
+  flex-direction: row;
+}
+
+.icon {
+  height: 1.6rem;
+  width: 1.6rem;
+  margin-right: $secondary-margin;
+}

@@ -12,10 +12,6 @@ const NavRoutes = {
         path: '/universities',
         name: 'Universities',
     },
-    course: {
-        path: '/course',
-        name: 'Course',
-    },
 };
 
 export default NavRoutes;

@@ -1,9 +1,10 @@
+// @flow
 import * as React from 'react';
 import { Card } from 'react-bootstrap';
 
 import './styles/courseDetails.scss';
 
-const CourseDetails = (): React.Node => {
+const CourseDescription = (): React.Node => {
     return (
         <Card className={'courseDetailsCard shadow-sm'}>
             <Card.Header as={'h5'}>Description</Card.Header>
@@ -14,4 +15,4 @@ const CourseDetails = (): React.Node => {
     );
 };
 
-export default CourseDetails;
+export default CourseDescription;

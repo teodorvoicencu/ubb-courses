@@ -1,15 +1,16 @@
+// @flow
 import * as React from 'react';
 
 import './styles/desktop.courseDetails.scss';
 
-import CourseDetails from '../course/courseDetails';
+import CourseDescription from '../course/courseDescription';
 import CourseHeader from '../course/courseHeader';
 
 const CourseDetailsPage = (): React.Node => {
     return (
         <div className={'details'}>
             <CourseHeader />
-            <CourseDetails />
+            <CourseDescription />
         </div>
     );
 };
