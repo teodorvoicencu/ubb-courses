@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ubb.courses.backend.controllers.exceptions.course.CourseException;
 import ubb.courses.backend.models.Course;
+import ubb.courses.backend.models.authorization.User;
 import ubb.courses.backend.repositories.CourseRepository;
 import ubb.courses.backend.repositories.UserRepository;
 import ubb.courses.backend.services.security.ISecurityService;
@@ -36,9 +37,16 @@ public class CourseService implements ICourseService {
 
     @Override
     @Transactional
-    public Course addCourse(Course course) {
-        this.userRepository.findById(this.securityService.getUserId()).ifPresent(course::setOwner);
-        return this.courseRepository.save(course);
+    public Course addCourse(Course course) throws CourseException {
+        int ownerId = securityService.getCurrentUser()
+                .orElseThrow(() -> new CourseException("Trying to get current user returned Optional.empty()."))
+                .getId();
+
+        User owner = userRepository.findById(ownerId)
+                .orElseThrow(() -> new CourseException(String.format("Failed to find user with id=%d.", ownerId)));
+
+        course.setOwner(owner);
+        return courseRepository.save(course);
     }
 
     @Override
@@ -54,13 +62,12 @@ public class CourseService implements ICourseService {
     @Override
     @Transactional
     public Course updateCourse(Course course) {
-        if (!courseRepository.existsById(course.getId())) {
-            throw new CourseException("Course not found!");
-        }
+        User owner = courseRepository
+                .findById(course.getId())
+                .orElseThrow(() -> new CourseException("Course cannot be not found."))
+                .getOwner();
 
-        Course existingCourse = courseRepository.getOne(course.getId());
-        course.setOwner(existingCourse.getOwner());
-
-        return this.courseRepository.save(course);
+        course.setOwner(owner);
+        return courseRepository.save(course);
     }
 }

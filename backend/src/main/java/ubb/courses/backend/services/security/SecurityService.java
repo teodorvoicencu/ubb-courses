@@ -29,7 +29,8 @@ public class SecurityService implements ISecurityService {
         this.userRepository = userRepository;
     }
 
-    private Optional<UserPrincipal> getCurrentUser() {
+    @Override
+    public Optional<UserPrincipal> getCurrentUser() {
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
         if (principal instanceof UserPrincipal) {
@@ -52,24 +53,16 @@ public class SecurityService implements ISecurityService {
     }
 
     @Override
-    public Integer getUserId() {
-        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        if (principal instanceof UserPrincipal) {
-            return ((UserPrincipal) principal).getId();
-        }
-        return null;
-    }
-
-
-    @Override
     public boolean isTeacher() {
-        return this.getAuthorities().stream()
+        return this.getAuthorities()
+                .stream()
                 .anyMatch(authority -> authority.getAuthority().equals(AuthorityType.TEACHER.name()));
     }
 
     @Override
     public boolean isStudent() {
-        return this.getAuthorities().stream()
+        return this.getAuthorities()
+                .stream()
                 .anyMatch(authority -> authority.getAuthority().equals(AuthorityType.STUDENT.name()));
     }
 
