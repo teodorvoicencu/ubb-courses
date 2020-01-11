@@ -1,12 +1,12 @@
 // @flow
+import * as React from 'react';
 import Person from 'react-ionicons/lib/MdPerson';
 import Albums from 'react-ionicons/lib/MdAlbums';
 import { Card } from 'react-bootstrap';
-import * as React from 'react';
 
-import './styles/courseHeaderExtra.scss';
+import './styles/courseHeaderStats.scss';
 
-const CourseHeaderExtra = (): React.Node => {
+const CourseHeaderStats = (): React.Node => {
     return (
         <Card className={'courseExtra'} bg={'light'}>
             <div className={'courseExtraItem'}>
@@ -25,4 +25,4 @@ const CourseHeaderExtra = (): React.Node => {
     );
 };
 
-export default CourseHeaderExtra;
+export default CourseHeaderStats;

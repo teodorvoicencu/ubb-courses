@@ -4,13 +4,18 @@ import * as React from 'react';
 import './styles/courseHeader.scss';
 
 import CourseHeaderSummary from './courseHeaderSummary';
-import CourseHeaderExtra from './courseHeaderExtra';
+import CourseHeaderStats from './courseHeaderStats';
+import type { Course } from './types';
 
-const CourseHeader = (): React.Node => {
+type Props = {
+    course: Course,
+};
+
+const CourseHeader = ({ course }: Props): React.Node => {
     return (
         <div className={'row'}>
-            <CourseHeaderSummary />
-            <CourseHeaderExtra />
+            <CourseHeaderSummary title={course.name} />
+            <CourseHeaderStats />
         </div>
     );
 };

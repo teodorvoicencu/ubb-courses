@@ -7,7 +7,7 @@
     height: 12rem;
     width: 100%;
 
-    border: 0.1rem solid $border-grey;
+    border: $border-width solid $border-grey;
     border-radius: $border-radius;
 
     overflow: hidden;
@@ -18,7 +18,7 @@
 
 .body {
     align-self: stretch;
-    border-left: 0.1rem solid $border-grey;
+    border-left: $border-width solid $border-grey;
 }
 
 .image {
