@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Card } from 'react-bootstrap';
 
 import LoginForm from '../login/loginForm';
-import './styles/desktop.login.scss';
+import './styles/desktop.loginPage.scss';
 import RegisterLink from '../register/registerLink';
 
 const LoginPage = (): React.Node => {
