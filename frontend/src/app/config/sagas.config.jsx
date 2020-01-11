@@ -3,7 +3,11 @@ import { all, takeEvery, takeLatest } from 'redux-saga/effects';
 
 import { init, login, logout, register, UserTypes } from '../redux/user';
 import { CoursesTypes, fetchCourses } from '../redux/courses';
+<<<<<<< HEAD
 import { CourseTypes, createCourse, fetchCourse, updateCourse } from '../redux/course';
+=======
+import { CourseTypes, createCourse, deleteCourse, updateCourse } from '../redux/course';
+>>>>>>> Add delete course redux and saga
 
 export default function* rootSaga() {
     try {
@@ -15,9 +19,10 @@ export default function* rootSaga() {
         // Courses Sagas
         yield all([takeLatest(CoursesTypes.FETCH_COURSES, fetchCourses)]);
         // Course Sagas
+        yield all([takeLatest(CourseTypes.FETCH_COURSE, fetchCourse)]);
         yield all([takeLatest(CourseTypes.CREATE_COURSE, createCourse)]);
         yield all([takeLatest(CourseTypes.UPDATE_COURSE, updateCourse)]);
-        yield all([takeLatest(CourseTypes.FETCH_COURSE, fetchCourse)]);
+        yield all([takeLatest(CourseTypes.DELETE_COURSE, deleteCourse)]);
     } catch (err) {
         // eslint-disable-next-line no-console
         console.log(err);

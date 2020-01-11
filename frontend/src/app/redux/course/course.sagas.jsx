@@ -44,3 +44,17 @@ export function* updateCourse({ id, name, description }) {
         yield put(CourseActions.updateCourseFailure());
     }
 }
+
+export function* deleteCourse({ id }) {
+    try {
+        yield put(CourseActions.loading(true));
+        const response = yield call(axios.delete, `/courses/${id}`);
+        if (response.status === 200) {
+            yield put(CourseActions.deleteCourseSuccess());
+        }
+        yield put(CourseActions.loading(false));
+    } catch (error) {
+        yield put(CourseActions.loading(false));
+        yield put(CourseActions.deleteCourseFailure());
+    }
+}
