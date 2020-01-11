@@ -3,11 +3,13 @@ import { all, takeEvery, takeLatest } from 'redux-saga/effects';
 
 import { init, login, logout, register, UserTypes } from '../redux/user';
 import { CoursesTypes, fetchCourses } from '../redux/courses';
-<<<<<<< HEAD
-import { CourseTypes, createCourse, fetchCourse, updateCourse } from '../redux/course';
-=======
-import { CourseTypes, createCourse, deleteCourse, updateCourse } from '../redux/course';
->>>>>>> Add delete course redux and saga
+import {
+    CourseTypes,
+    createCourse,
+    fetchCourse,
+    updateCourse,
+    deleteCourse,
+} from '../redux/course';
 
 export default function* rootSaga() {
     try {
