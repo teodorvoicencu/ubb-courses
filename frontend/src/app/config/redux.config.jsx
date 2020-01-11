@@ -7,4 +7,5 @@ import { coursesReducer } from '../redux/courses';
 export default combineReducers({
     user: userReducer,
     courses: coursesReducer,
+    course: coursesReducer,
 });
