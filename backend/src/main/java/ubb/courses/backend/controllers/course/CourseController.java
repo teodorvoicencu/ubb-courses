@@ -8,7 +8,6 @@ import ubb.courses.backend.dtos.courses.CourseConverter;
 import ubb.courses.backend.dtos.courses.CourseDTO;
 import ubb.courses.backend.models.Course;
 import ubb.courses.backend.services.course.ICourseService;
-import ubb.courses.backend.services.security.ISecurityService;
 
 import javax.validation.Valid;
 import java.util.Collection;
@@ -22,7 +21,7 @@ public class CourseController implements ICourseController {
     private final CourseConverter courseConverter;
 
     @Autowired
-    public CourseController(ICourseService courseService, ISecurityService securityService, CourseConverter courseConverter) {
+    public CourseController(ICourseService courseService, CourseConverter courseConverter) {
         this.courseService = courseService;
         this.courseConverter = courseConverter;
     }
