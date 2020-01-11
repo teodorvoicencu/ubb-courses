@@ -8,7 +8,7 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 @Entity
-@DiscriminatorValue("3")
+@DiscriminatorValue(MediaTypeEnum.Values.DOWNLOADABLE)
 @Getter
 @Setter
 @AllArgsConstructor

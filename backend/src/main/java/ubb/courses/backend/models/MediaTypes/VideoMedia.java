@@ -8,7 +8,7 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 @Entity
-@DiscriminatorValue("2")
+@DiscriminatorValue(MediaTypeEnum.Values.VIDEO)
 @Getter
 @Setter
 @AllArgsConstructor

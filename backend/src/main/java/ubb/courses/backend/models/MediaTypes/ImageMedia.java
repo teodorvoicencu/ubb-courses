@@ -8,7 +8,7 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 @Entity
-@DiscriminatorValue("1")
+@DiscriminatorValue(MediaTypeEnum.Values.IMAGE)
 @Getter
 @Setter
 @AllArgsConstructor

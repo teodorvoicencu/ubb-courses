@@ -8,7 +8,7 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 @Entity
-@DiscriminatorValue("0")
+@DiscriminatorValue(MediaTypeEnum.Values.TEXT)
 @Getter
 @Setter
 @AllArgsConstructor

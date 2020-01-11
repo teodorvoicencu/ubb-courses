@@ -8,7 +8,7 @@ import javax.persistence.*;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "media_type", discriminatorType = DiscriminatorType.INTEGER)
+@DiscriminatorColumn(name = "media_type", discriminatorType = DiscriminatorType.STRING)
 @Table(name = "media")
 @Getter
 @Setter
