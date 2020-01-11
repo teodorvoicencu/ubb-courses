@@ -16,8 +16,8 @@ import javax.persistence.Entity;
 public class DownloadableMedia extends Media {
 
     @Builder
-    public DownloadableMedia(Course course, String downloadLink) {
-        super(course);
+    public DownloadableMedia(Integer orderIndex, Course course, String downloadLink) {
+        super(orderIndex, course);
         this.downloadLink = downloadLink;
     }
 

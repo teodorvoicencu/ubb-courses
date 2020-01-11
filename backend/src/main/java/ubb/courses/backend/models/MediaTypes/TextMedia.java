@@ -16,8 +16,8 @@ import javax.persistence.Entity;
 public class TextMedia extends Media {
 
     @Builder
-    public TextMedia(Course course, String text) {
-        super(course);
+    public TextMedia(Integer orderIndex, Course course, String text) {
+        super(orderIndex, course);
         this.text = text;
     }
 

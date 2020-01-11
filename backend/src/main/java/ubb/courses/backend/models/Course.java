@@ -46,4 +46,7 @@ public class Course extends BaseEntity {
 
     @OneToMany(mappedBy = "course")
     private Set<Enrollment> students;
+
+    @OneToMany(mappedBy = "course")
+    private Set<Media> media;
 }

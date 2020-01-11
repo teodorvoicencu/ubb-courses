@@ -16,8 +16,8 @@ import javax.persistence.Entity;
 public class ImageMedia extends Media {
 
     @Builder
-    public ImageMedia(Course course, String imageLink) {
-        super(course);
+    public ImageMedia(Integer orderIndex, Course course, String imageLink) {
+        super(orderIndex, course);
         this.imageLink = imageLink;
     }
 

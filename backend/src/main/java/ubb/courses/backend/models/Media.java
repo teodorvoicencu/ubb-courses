@@ -16,6 +16,8 @@ import javax.persistence.*;
 @NoArgsConstructor
 public abstract class Media extends BaseEntity {
 
+    private Integer orderIndex;
+
     @ManyToOne(fetch = FetchType.LAZY)
     private Course course;
 

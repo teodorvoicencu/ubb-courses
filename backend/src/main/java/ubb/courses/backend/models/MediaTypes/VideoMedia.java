@@ -16,10 +16,11 @@ import javax.persistence.Entity;
 public class VideoMedia extends Media {
 
     @Builder
-    public VideoMedia(Course course, String youtubeLink) {
-        super(course);
+    public VideoMedia(Integer orderIndex, Course course, String youtubeLink) {
+        super(orderIndex, course);
         this.youtubeLink = youtubeLink;
     }
+
 
     private String youtubeLink;
 
