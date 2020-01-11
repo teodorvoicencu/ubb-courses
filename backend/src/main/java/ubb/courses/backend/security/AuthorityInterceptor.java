@@ -32,23 +32,15 @@ public class AuthorityInterceptor implements HandlerInterceptor {
         IsTeacher isTeacher = handlerMethod.getMethodAnnotation(IsTeacher.class);
 
         if (isTeacher != null) {
-            if (securityService.isTeacher()) {
+            if (securityService.isTeacher())
                 return true;
-            } else {
-                response.setStatus(HttpStatus.FORBIDDEN.value());
-                return false;
-            }
         }
 
         IsStudent isStudent = handlerMethod.getMethodAnnotation(IsStudent.class);
-        
+
         if (isStudent != null) {
-            if (securityService.isStudent()) {
+            if (securityService.isStudent())
                 return true;
-            } else {
-                response.setStatus(HttpStatus.FORBIDDEN.value());
-                return false;
-            }
         }
 
         return true;

@@ -34,17 +34,13 @@ public class SecurityService implements ISecurityService {
 
     @Override
     public boolean isTeacher() {
-        val authorities = this.getAuthorities();
-        return authorities.stream().filter(
-                authority -> authority.getAuthority().equals(AuthorityType.TEACHER.name())
-        ).count() == 1;
+        return this.getAuthorities().stream()
+                .anyMatch(authority -> authority.getAuthority().equals(AuthorityType.TEACHER.name()));
     }
 
     @Override
     public boolean isStudent() {
-        val authorities = this.getAuthorities();
-        return authorities.stream().filter(
-                authority -> authority.getAuthority().equals(AuthorityType.STUDENT.name())
-        ).count() == 1;
+        return this.getAuthorities().stream()
+                .anyMatch(authority -> authority.getAuthority().equals(AuthorityType.STUDENT.name()));
     }
 }
