@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import CourseActions from './course.redux';
 
-export function* addCourse({ name, description }) {
+export function* createCourse({ name, description }: { name: *, description: * }) {
     try {
         yield put(CourseActions.addCourseLoading(true));
         const response = yield call(axios.post, '/courses/', { name, description });
