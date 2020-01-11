@@ -2,10 +2,10 @@ import { createReducer, createActions } from 'reduxsauce';
 
 const { Types, Creators } = createActions({
     createCourse: ['name', 'description'],
-    createCourseSuccess: ['data'],
+    createCourseSuccess: [],
     createCourseFailure: [],
     updateCourse: ['id', 'name', 'description'],
-    updateCourseSuccess: ['data'],
+    updateCourseSuccess: [],
     updateCourseFailure: [],
     loading: ['value'],
 });
