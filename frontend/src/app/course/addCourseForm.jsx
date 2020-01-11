@@ -6,10 +6,10 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { CourseActions } from '../redux/course';
 
-import { addCourseSchema } from './course.addCourseValidation';
-import AddCourseFormInputs from './course.addCourseFromInputs';
+import { addCourseSchema } from './validation';
+import AddCourseFormInputs from './addCourseFromInputs';
 
-import './styles/course.addCourseForm.scss';
+import './styles/addCourseForm.scss';
 
 const AddCourseForm = (): React.Node => {
     const dispatch = useDispatch();
