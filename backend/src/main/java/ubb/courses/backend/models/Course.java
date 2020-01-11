@@ -7,12 +7,10 @@ import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import ubb.courses.backend.models.authorization.User;
 import ubb.courses.backend.models.generic.BaseEntity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EntityListeners;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Date;
@@ -43,4 +41,7 @@ public class Course extends BaseEntity {
     @LastModifiedDate
     private Date modifiedDate;
 
+    @ManyToOne()
+    @JoinColumn(name = "owner_id",referencedColumnName = "id")
+    private User ownerId;
 }

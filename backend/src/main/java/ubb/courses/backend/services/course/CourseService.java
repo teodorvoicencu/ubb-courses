@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import ubb.courses.backend.controllers.exceptions.course.CourseException;
 import ubb.courses.backend.models.Course;
 import ubb.courses.backend.repositories.CourseRepository;
+import ubb.courses.backend.repositories.UserRepository;
+import ubb.courses.backend.services.security.ISecurityService;
 
 import javax.transaction.Transactional;
 import java.util.Collection;
@@ -13,10 +15,14 @@ import java.util.Collection;
 public class CourseService implements ICourseService {
 
     private final CourseRepository courseRepository;
+    private final UserRepository userRepository;
+    private final ISecurityService securityService;
 
     @Autowired
-    public CourseService(CourseRepository courseRepository) {
+    public CourseService(CourseRepository courseRepository, UserRepository userRepository, ISecurityService securityService) {
         this.courseRepository = courseRepository;
+        this.userRepository = userRepository;
+        this.securityService = securityService;
     }
 
     public Collection<Course> getAllCourses() {
@@ -31,7 +37,8 @@ public class CourseService implements ICourseService {
     @Override
     @Transactional
     public Course addCourse(Course course) {
-       return this.courseRepository.save(course);
+        this.userRepository.findById(this.securityService.getUserId()).ifPresent(course::setOwnerId);
+        return this.courseRepository.save(course);
     }
 
     @Override
