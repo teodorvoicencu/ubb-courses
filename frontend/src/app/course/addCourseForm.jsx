@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { Formik } from 'formik';
 import { Button, Form } from 'react-bootstrap';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { CourseActions } from '../redux/course';
 
@@ -13,7 +13,6 @@ import './styles/addCourseForm.scss';
 
 const AddCourseForm = (): React.Node => {
     const dispatch = useDispatch();
-    const error = useSelector(state => state.user.error);
 
     const onAddCourse = React.useCallback(
         values => {
@@ -25,7 +24,7 @@ const AddCourseForm = (): React.Node => {
 
     return (
         <Formik
-            initialValues={{ name: '', description:'' }}
+            initialValues={{ name: '', description: '' }}
             validationSchema={addCourseSchema}
             onSubmit={onAddCourse}
         >
@@ -38,7 +37,6 @@ const AddCourseForm = (): React.Node => {
                             errors={errors}
                         />
                     </Form>
-                    {error !== null ? <div className={'add-course-error'}>{error}</div> : null}
                     <div className={'text-center'}>
                         <Button variant={'primary'} type={'submit'} onClick={handleSubmit}>
                             Add Course
