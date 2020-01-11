@@ -25,7 +25,7 @@ const AddCourseForm = (): React.Node => {
 
     return (
         <Formik
-            initialValues={{ name: '', description:'' }}
+            initialValues={{ name: '', description: '' }}
             validationSchema={addCourseSchema}
             onSubmit={onAddCourse}
         >
