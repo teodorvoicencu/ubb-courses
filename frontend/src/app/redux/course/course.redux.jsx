@@ -4,6 +4,9 @@ const { Types, Creators } = createActions({
     createCourse: ['name', 'description'],
     createCourseSuccess: ['data'],
     createCourseFailure: [],
+    updateCourse: ['id', 'name', 'description'],
+    updateCourseSuccess: ['data'],
+    updateCourseFailure: [],
     loading: ['value'],
 });
 
