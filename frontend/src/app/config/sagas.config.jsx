@@ -3,7 +3,7 @@ import { all, takeEvery, takeLatest } from 'redux-saga/effects';
 
 import { init, login, logout, register, UserTypes } from '../redux/user';
 import { CoursesTypes, fetchCourses } from '../redux/courses';
-import { CourseTypes, createCourse, updateCourse } from '../redux/course';
+import { CourseTypes, createCourse, fetchCourse, updateCourse } from '../redux/course';
 
 export default function* rootSaga() {
     try {
@@ -17,6 +17,7 @@ export default function* rootSaga() {
         // Course Sagas
         yield all([takeLatest(CourseTypes.CREATE_COURSE, createCourse)]);
         yield all([takeLatest(CourseTypes.UPDATE_COURSE, updateCourse)]);
+        yield all([takeLatest(CourseTypes.FETCH_COURSE, fetchCourse)]);
     } catch (err) {
         // eslint-disable-next-line no-console
         console.log(err);
