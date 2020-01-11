@@ -1,11 +1,11 @@
-# UBB-Courses
-Mono-Repository for the E-Learning platform for university courses.  
-The aim of this project is to create a more friendly environment for the students to learn during the university.
-Teachers will be able to upload the course materials to the website and divide them in lessons, uploading images and 
-videos, creating poll's, quizzes, and assigning projects and homework such that the students will be able to 
-comprehend the subjects easier.
+# ubb-courses📖
 
-# Built With
+The aim of this project is to create a friendlier environment for the students to learn during the university.
+Our project will enable course material upload and organizing them into bite-sized lessons.
+We aim to support uploading images, videos and other media formats. We aim to increase student interactivity with features
+such as polls, quizzes, and projects such that the students will be able to more easily learn the subjects that matter.
+
+# Core Technologies
 
 - [React](https://reactjs.org/)
 - [Spring](https://reactjs.org/)
@@ -13,22 +13,24 @@ comprehend the subjects easier.
 
 # Getting Started
 
-Clone the repository or download it.  
+### Requirements
+- [JDK-11](https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html)
+- [node](https://nodejs.org/en/)
+- [postgres](https://www.postgresql.org/)
 
-## Prerequisites
-
-- [Java 11](https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html)
-- [NodeJs](https://nodejs.org/en/)
-- [PostgreSql](https://www.postgresql.org/)
+Clone the repository and run `yarn install` in the `frontend` directory.
 
 # Project Structure
 
-This is a mono-repository, so it contains both frontend project and backend restful api.
+This project is a mono-repository. It contains both the frontend project and the backend APIs.
 
-##Frontend
+## Frontend
 
 The `frontend` folder contains the react application and all the necessary dependencies for this project to work.  
-It is written in `react js` with `flow`, `react-redux`, and `react-sagas`. 
+It is written in React with:
+* Flow - a library maintained by Facebook for type linting
+* `react-redux` - a state-management library to maintain a single source of truth 
+* `redux-sagas` - a library to make application side-effects easier to deal with   
 
 ```
 .
@@ -49,9 +51,9 @@ It is written in `react js` with `flow`, `react-redux`, and `react-sagas`.
 
 For more information please see the `README.md` file inside the folder.
 
-##Backend
+## Backend
 
-The `backend` folder contains the spring boot api which serves the frontend.
+The `backend` folder contains the Spring Boot server: configuration, models and business logic.
 
 ```
 .
