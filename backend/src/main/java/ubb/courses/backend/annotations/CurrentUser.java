@@ -1,4 +1,4 @@
-package ubb.courses.backend.security;
+package ubb.courses.backend.annotations;
 
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import java.lang.annotation.*;

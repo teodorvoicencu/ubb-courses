@@ -3,6 +3,7 @@ package ubb.courses.backend.controllers.course;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import ubb.courses.backend.annotations.IsTeacher;
 import ubb.courses.backend.dtos.courses.CourseConverter;
 import ubb.courses.backend.dtos.courses.CourseDTO;
 import ubb.courses.backend.models.Course;
@@ -36,6 +37,7 @@ public class CourseController implements ICourseController {
         return ResponseEntity.ok(this.courseConverter.createFrom(this.courseService.getCourseById(id)));
     }
 
+    @IsTeacher
     @PostMapping
     public ResponseEntity<CourseDTO> addCourse(@RequestBody CourseDTO course) {
         return ResponseEntity.ok(
