@@ -1,4 +1,4 @@
-# ubb-courses📖📖📖 📖
+# ubb-courses📖
 
 The aim of this project is to create a friendlier environment for the students to learn during the university.
 Our project will enable course material upload and organizing them into bite-sized lessons.
