@@ -64,6 +64,13 @@ public class UserService implements IUserService {
         Authority userAuthority = authorityRepository.findByName(authority)
                 .orElseThrow(() -> new AppException("User authority not found."));
 
+        //add a student authority for each registered user
+        if (authority != AuthorityType.STUDENT) {
+            Authority studentAuthority = authorityRepository.findByName(AuthorityType.STUDENT)
+                    .orElseThrow(() -> new AppException("User authority not found."));
+
+            user.getUserAuthorities().add(new UserAuthority(user, studentAuthority));
+        }
         user.getUserAuthorities().add(new UserAuthority(user, userAuthority));
 
         userRepository.save(user);
