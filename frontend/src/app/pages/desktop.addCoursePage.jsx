@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Card } from 'react-bootstrap';
 
 import AddCourseForm from '../course/addCourseForm';
-import './styles/desktop.addCourse.scss';
+import './styles/desktop.addCoursePage.scss';
 
 const AddCoursePage = (): React.Node => {
     return (

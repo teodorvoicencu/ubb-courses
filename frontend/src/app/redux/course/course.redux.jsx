@@ -22,7 +22,6 @@ export default Creators;
 const INITIAL_STATE = {
     data: null,
     loading: false,
-    error: null,
 };
 
 export const courseReducer = createReducer(INITIAL_STATE, {

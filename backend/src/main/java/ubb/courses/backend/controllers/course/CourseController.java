@@ -3,6 +3,7 @@ package ubb.courses.backend.controllers.course;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import ubb.courses.backend.annotations.IsCourseOwner;
 import ubb.courses.backend.annotations.IsTeacher;
 import ubb.courses.backend.dtos.courses.CourseConverter;
 import ubb.courses.backend.dtos.courses.CourseDTO;
@@ -45,11 +46,13 @@ public class CourseController implements ICourseController {
         );
     }
 
+    @IsCourseOwner
     @DeleteMapping("/{id}")
     public void deleteCourse(@PathVariable Integer id) {
         this.courseService.deleteCourse(id);
     }
 
+    @IsCourseOwner
     @PutMapping("/{id}")
     public ResponseEntity<CourseDTO> updateCourse(@PathVariable Integer id, @Valid @RequestBody CourseDTO courseDTO) {
         Course course = this.courseConverter.createFrom(courseDTO);

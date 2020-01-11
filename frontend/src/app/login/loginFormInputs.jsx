@@ -5,7 +5,7 @@ import { FormikErrors, FormikValues } from 'formik';
 import './styles/loginFormInputs.scss';
 
 type Props = {
-    handleChange: any,
+    handleChange: any => void,
     values: FormikValues,
     errors: FormikErrors,
 };

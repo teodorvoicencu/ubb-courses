@@ -5,7 +5,7 @@ import { Form } from 'react-bootstrap';
 import './styles/registerFormInputs.scss';
 
 type Props = {
-    handleChange: any,
+    handleChange: any => void,
     values: FormikValues,
     errors: FormikErrors,
 };

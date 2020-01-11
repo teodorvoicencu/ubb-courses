@@ -43,5 +43,5 @@ public class Course extends BaseEntity {
 
     @ManyToOne()
     @JoinColumn(name = "owner_id",referencedColumnName = "id")
-    private User ownerId;
+    private User owner;
 }

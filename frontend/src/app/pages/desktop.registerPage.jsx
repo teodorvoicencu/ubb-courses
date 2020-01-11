@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { Card } from 'react-bootstrap';
 
-import './styles/desktop.register.scss';
+import './styles/desktop.registerPage.scss';
 import RegisterForm from '../register/registerForm';
 
 const RegisterPage = (): React.Node => (

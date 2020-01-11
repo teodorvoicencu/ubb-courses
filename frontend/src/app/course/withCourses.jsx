@@ -27,7 +27,7 @@ const withCourses = <T: *>(
         render() {
             const { loading, courses } = this.props;
             if (!loading && courses) {
-                return React.createElement(component);
+                return React.createElement(component, { courses });
             }
             return <SuspenseFallback />;
         }
