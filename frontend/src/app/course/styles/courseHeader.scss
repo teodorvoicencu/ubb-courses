@@ -1,8 +1,8 @@
 @import '../../theme/variables';
 
 .row {
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  margin: $ternary-margin $ternary-margin;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    margin: $ternary-margin $ternary-margin;
 }
