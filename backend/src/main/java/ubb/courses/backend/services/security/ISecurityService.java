@@ -10,4 +10,6 @@ public interface ISecurityService {
     Integer getUserId();
 
     boolean isTeacher();
+
+    boolean isStudent();
 }

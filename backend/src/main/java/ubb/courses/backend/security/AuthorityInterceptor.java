@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.resource.ResourceHttpRequestHandler;
+import ubb.courses.backend.annotations.IsStudent;
 import ubb.courses.backend.annotations.IsTeacher;
 import ubb.courses.backend.services.security.ISecurityService;
 
@@ -32,6 +33,17 @@ public class AuthorityInterceptor implements HandlerInterceptor {
 
         if (isTeacher != null) {
             if (securityService.isTeacher()) {
+                return true;
+            } else {
+                response.setStatus(HttpStatus.FORBIDDEN.value());
+                return false;
+            }
+        }
+
+        IsStudent isStudent = handlerMethod.getMethodAnnotation(IsStudent.class);
+        
+        if (isStudent != null) {
+            if (securityService.isStudent()) {
                 return true;
             } else {
                 response.setStatus(HttpStatus.FORBIDDEN.value());

@@ -39,4 +39,12 @@ public class SecurityService implements ISecurityService {
                 authority -> authority.getAuthority().equals(AuthorityType.TEACHER.name())
         ).count() == 1;
     }
+
+    @Override
+    public boolean isStudent() {
+        val authorities = this.getAuthorities();
+        return authorities.stream().filter(
+                authority -> authority.getAuthority().equals(AuthorityType.STUDENT.name())
+        ).count() == 1;
+    }
 }
