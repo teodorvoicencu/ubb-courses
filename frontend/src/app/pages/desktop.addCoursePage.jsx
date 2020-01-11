@@ -2,8 +2,8 @@
 import * as React from 'react';
 import { Card } from 'react-bootstrap';
 
-import AddCourseForm from '../course/course.addCourseForm';
-import './styles/desktop.course.addCourse.scss';
+import AddCourseForm from '../course/addCourseForm';
+import './styles/desktop.addCourse.scss';
 
 const AddCoursePage = (): React.Node => {
     return (
