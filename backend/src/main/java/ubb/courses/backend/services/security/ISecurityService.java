@@ -7,5 +7,7 @@ import java.util.Collection;
 public interface ISecurityService {
     Collection<? extends GrantedAuthority> getAuthorities();
 
+    Integer getUserId();
+
     boolean isTeacher();
 }

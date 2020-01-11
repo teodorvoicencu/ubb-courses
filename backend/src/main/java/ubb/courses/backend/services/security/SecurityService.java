@@ -23,6 +23,16 @@ public class SecurityService implements ISecurityService {
     }
 
     @Override
+    public Integer getUserId() {
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if (principal instanceof UserPrincipal) {
+            return ((UserPrincipal) principal).getId();
+        }
+        return null;
+    }
+
+
+    @Override
     public boolean isTeacher() {
         val authorities = this.getAuthorities();
         return authorities.stream().filter(
