@@ -4,21 +4,33 @@ import Nav from 'react-bootstrap/Nav';
 import { Button } from 'react-bootstrap';
 import './styles/userNav.scss';
 import { useDispatch, useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 
 import { UserActions } from '../redux/user';
 
-const UserNav = (): React.Node => {
+type Props = {
+    location: any,
+};
+
+const UserNav = ({ location }: Props): React.Node => {
     const dispatch = useDispatch();
     const user = useSelector(state => state.user.name);
+
+    const profilePath = '/profile';
 
     const logOut = React.useCallback(() => dispatch(UserActions.logout()), [dispatch]);
 
     return (
         <>
             <Nav.Item className="userName">
-                <Nav.Link eventKey="disabled" disabled>
+                <NavLink
+                    className="nav-link"
+                    isActive={() => location.pathname === profilePath}
+                    to={'/profile'}
+                    activeClassName="active"
+                >
                     {user}
-                </Nav.Link>
+                </NavLink>
             </Nav.Item>
             <Button as={Nav.Item} variant="outline-danger" onClick={logOut}>
                 Log Out

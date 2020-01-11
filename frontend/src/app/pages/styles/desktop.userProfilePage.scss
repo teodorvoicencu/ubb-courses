@@ -1,0 +1,19 @@
+.fullWidth {
+  display: flex;
+  width: 100%;
+}
+
+.box{
+  width: 50%;
+}
+
+.fix img{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.cardBody {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+}
