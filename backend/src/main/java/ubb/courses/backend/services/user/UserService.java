@@ -8,7 +8,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import ubb.courses.backend.controllers.exceptions.AppException;
 import ubb.courses.backend.controllers.exceptions.user.EmailException;
-import ubb.courses.backend.dtos.authentication.RegisterConverter;
 import ubb.courses.backend.models.authorization.Authority;
 import ubb.courses.backend.models.authorization.AuthorityType;
 import ubb.courses.backend.models.authorization.User;
@@ -33,8 +32,7 @@ public class UserService implements IUserService {
 
     @Autowired
     public UserService(UserRepository userRepository, AuthorityRepository authorityRepository,
-                       AuthenticationManager authenticationManager, RegisterConverter registerConverter,
-                       JwtTokenProvider tokenProvider) {
+                       AuthenticationManager authenticationManager, JwtTokenProvider tokenProvider) {
         this.userRepository = userRepository;
         this.authorityRepository = authorityRepository;
         this.authenticationManager = authenticationManager;
