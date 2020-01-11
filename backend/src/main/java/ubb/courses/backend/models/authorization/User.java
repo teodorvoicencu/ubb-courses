@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import ubb.courses.backend.models.Course;
 import ubb.courses.backend.models.generic.BaseEntity;
 
 import java.util.HashSet;
@@ -48,6 +49,10 @@ public class User extends BaseEntity {
     @OneToMany(mappedBy = "user", targetEntity = UserAuthority.class, cascade = {
             CascadeType.ALL}, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<UserAuthority> userAuthorities = new HashSet<>();
+
+    @OneToMany(mappedBy = "owner", targetEntity = Course.class, cascade = {
+            CascadeType.ALL}, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<Course> courses;
 
     public User(String name, String email, String password) {
         this.name = name;

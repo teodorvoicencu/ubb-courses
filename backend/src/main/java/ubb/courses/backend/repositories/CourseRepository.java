@@ -6,4 +6,5 @@ import ubb.courses.backend.models.Course;
 
 @Repository
 public interface CourseRepository extends JpaRepository<Course, Integer> {
+    boolean existsByOwnerIdEqualsAndIdEquals(Integer ownerId, Integer id);
 }

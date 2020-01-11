@@ -37,7 +37,7 @@ public class CourseService implements ICourseService {
     @Override
     @Transactional
     public Course addCourse(Course course) {
-        this.userRepository.findById(this.securityService.getUserId()).ifPresent(course::setOwnerId);
+        this.userRepository.findById(this.securityService.getUserId()).ifPresent(course::setOwner);
         return this.courseRepository.save(course);
     }
 
@@ -54,9 +54,13 @@ public class CourseService implements ICourseService {
     @Override
     @Transactional
     public Course updateCourse(Course course) {
-        if (!this.courseRepository.existsById(course.getId())) {
+        if (!courseRepository.existsById(course.getId())) {
             throw new CourseException("Course not found!");
         }
+
+        Course existingCourse = courseRepository.getOne(course.getId());
+        course.setOwner(existingCourse.getOwner());
+
         return this.courseRepository.save(course);
     }
 }
