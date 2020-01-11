@@ -18,4 +18,5 @@ const INITIAL_STATE = {
 
 export const coursesReducer = createReducer(INITIAL_STATE, {
     [Types.LOADING]: (state, { value }) => ({ ...state, loading: value }),
+    [Types.FETCH_SUCCESS]: (state, { data }) => ({ ...state, ...data }),
 });
