@@ -41,7 +41,7 @@ public class Course extends BaseEntity {
     @LastModifiedDate
     private Date modifiedDate;
 
-    @ManyToOne()
+    @ManyToOne(cascade = CascadeType.DETACH)
     @JoinColumn(name = "owner_id",referencedColumnName = "id")
     private User owner;
 }

@@ -4,8 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ubb.courses.backend.controllers.exceptions.course.CourseException;
 import ubb.courses.backend.models.Course;
+import ubb.courses.backend.models.Enrollment;
 import ubb.courses.backend.models.authorization.User;
 import ubb.courses.backend.repositories.CourseRepository;
+import ubb.courses.backend.repositories.EnrollmentRepository;
 import ubb.courses.backend.repositories.UserRepository;
 import ubb.courses.backend.services.security.ISecurityService;
 
@@ -18,12 +20,14 @@ public class CourseService implements ICourseService {
     private final CourseRepository courseRepository;
     private final UserRepository userRepository;
     private final ISecurityService securityService;
+    private final EnrollmentRepository enrollmentRepository;
 
     @Autowired
-    public CourseService(CourseRepository courseRepository, UserRepository userRepository, ISecurityService securityService) {
+    public CourseService(CourseRepository courseRepository, UserRepository userRepository, ISecurityService securityService, EnrollmentRepository enrollmentRepository) {
         this.courseRepository = courseRepository;
         this.userRepository = userRepository;
         this.securityService = securityService;
+        this.enrollmentRepository = enrollmentRepository;
     }
 
     public Collection<Course> getAllCourses() {
@@ -53,9 +57,10 @@ public class CourseService implements ICourseService {
     @Transactional
     public void deleteCourse(Integer id) {
         if (this.courseRepository.existsById(id)) {
+            this.enrollmentRepository.deleteAll(this.enrollmentRepository.findAllByCourseId(id));
             this.courseRepository.deleteById(id);
         } else {
-            throw new CourseException("Course not found!");
+            throw new CourseException(("Course not found!"));
         }
     }
 
@@ -69,5 +74,22 @@ public class CourseService implements ICourseService {
 
         course.setOwner(owner);
         return courseRepository.save(course);
+    }
+
+    @Override
+    @Transactional
+    public Course enrollStudent(Integer courseId) {
+        if (!this.courseRepository.existsById(courseId)) {
+            throw new CourseException("Course not found!");
+        }
+
+        @SuppressWarnings("OptionalGetWithoutIsPresent")
+        Course course = courseRepository.findById(courseId).get();
+
+        @SuppressWarnings("OptionalGetWithoutIsPresent")
+        User user = this.userRepository.findById(this.securityService.getUserId()).get();
+
+        this.enrollmentRepository.save(new Enrollment(course, user));
+        return course;
     }
 }
