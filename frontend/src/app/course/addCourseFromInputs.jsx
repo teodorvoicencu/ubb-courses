@@ -33,6 +33,8 @@ const AddCourseFormInputs = (props: Props): React.Node => {
                 <Form.Group controlId="description" className="form-input">
                     <Form.Label>Description</Form.Label>
                     <Form.Control
+                        as="textarea"
+                        rows="3"
                         type="text"
                         name="description"
                         value={props.values.description}
