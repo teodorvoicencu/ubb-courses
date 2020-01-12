@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { Formik } from 'formik';
 import { Button, Form } from 'react-bootstrap';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { CourseActions } from '../redux/course';
 
@@ -10,9 +10,13 @@ import { addCourseSchema } from './validation';
 import AddCourseFormInputs from './addCourseFromInputs';
 
 import './styles/addCourseForm.scss';
+import { Redirect } from 'react-router-dom';
+
 
 const AddCourseForm = (): React.Node => {
     const dispatch = useDispatch();
+    const isLoggedIn = useSelector(state => state.user.loggedIn);
+    const authorities = useSelector(state => state.user.authorities);
 
     const onAddCourse = React.useCallback(
         values => {
@@ -22,7 +26,7 @@ const AddCourseForm = (): React.Node => {
         [dispatch],
     );
 
-    return (
+    return isLoggedIn && authorities.length === 2 ? (
         <Formik
             initialValues={{ name: '', description: '' }}
             validationSchema={addCourseSchema}
@@ -45,6 +49,8 @@ const AddCourseForm = (): React.Node => {
                 </>
             )}
         </Formik>
+    ): (
+        <Redirect to="/" />
     );
 };
 
