@@ -1,6 +1,8 @@
 import { call, put } from 'redux-saga/effects';
 import axios from 'axios';
 
+import AppRoutes from '../../types/appRoutes';
+
 import CourseActions from './course.redux';
 
 export function* fetchCourse({ id }) {
@@ -17,13 +19,14 @@ export function* fetchCourse({ id }) {
     }
 }
 
-export function* createCourse({ name, description }) {
+export function* createCourse({ name, description, history }) {
     try {
         yield put(CourseActions.loading(true));
         const response = yield call(axios.post, '/courses/', { name, description });
         if (response.status === 200) {
             yield put(CourseActions.createCourseSuccess());
         }
+        yield call(history.push, AppRoutes.COURSES);
         yield put(CourseActions.loading(false));
     } catch (error) {
         yield put(CourseActions.loading(false));

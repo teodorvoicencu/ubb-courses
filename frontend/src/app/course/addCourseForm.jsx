@@ -3,6 +3,7 @@ import * as React from 'react';
 import { Formik } from 'formik';
 import { Button, Form } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 import { CourseActions } from '../redux/course';
 
@@ -13,13 +14,14 @@ import './styles/addCourseForm.scss';
 
 const AddCourseForm = (): React.Node => {
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const onAddCourse = React.useCallback(
         values => {
             const { name, description } = values;
-            dispatch(CourseActions.createCourse(name, description));
+            dispatch(CourseActions.createCourse(name, description, history));
         },
-        [dispatch],
+        [dispatch, history],
     );
 
     return (
