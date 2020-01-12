@@ -5,9 +5,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
+import java.util.stream.Collectors;
 
 @Component
 public class JwtTokenProvider {
@@ -31,7 +33,8 @@ public class JwtTokenProvider {
                 .setSubject(userPrincipal.getId().toString())
                 .claim("name", userPrincipal.getName())
                 .claim("username", userPrincipal.getUsername())
-                .claim("authorities", userPrincipal.getAuthorities())
+                .claim("authorities", userPrincipal.getAuthorities()
+                        .stream().map(GrantedAuthority::getAuthority).collect(Collectors.toList()))
                 .setIssuedAt(new Date())
                 .setExpiration(expiryDate)
                 .signWith(SignatureAlgorithm.HS512, secret)

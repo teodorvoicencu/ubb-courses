@@ -8,6 +8,8 @@ import { NavLink } from 'react-router-dom';
 
 import { UserActions } from '../redux/user';
 
+import CreateCourseNavButton from './createCourseNavButton';
+
 type Props = {
     location: any,
 };
@@ -32,6 +34,7 @@ const UserNav = ({ location }: Props): React.Node => {
                     {user}
                 </NavLink>
             </Nav.Item>
+            <CreateCourseNavButton />
             <Button as={Nav.Item} variant="outline-danger" onClick={logOut}>
                 Log Out
             </Button>
