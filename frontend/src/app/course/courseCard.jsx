@@ -1,22 +1,31 @@
 // @flow
 import * as React from 'react';
 import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+
+import placeholder from '../theme/static/holder.png';
+
+import type { Course } from './types';
 
 import './styles/courseCard.scss';
-import type { Course } from './types';
 
 type Props = {
     course: Course,
 };
 
-const CourseCard = ({ course }: Props): React.Node => {
+const CourseCard = ({ course }: Props) => {
+    const university = course.university || 'Babeș-Bolyai University';
+
     return (
-        <Card className={'card shadow-sm show-pointer'}>
-            <Card.Header as={'h5'}>{course.name}</Card.Header>
-            <Card.Body>
+        <div className={'container'}>
+            <img className={'image'} src={placeholder} alt={'Placeholder'} />
+            <Card.Body className={'body'}>
+                <Card.Title className={'title'}>{course.name}</Card.Title>
+                <Card.Subtitle className={'subtitle'}>{university}</Card.Subtitle>
                 <Card.Text>{course.description}</Card.Text>
+                <Button variant="primary">View</Button>
             </Card.Body>
-        </Card>
+        </div>
     );
 };
 
