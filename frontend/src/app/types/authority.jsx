@@ -1,8 +1,8 @@
 // @flow
 const AuthorityTypes = Object.freeze({
-    teacher: 'TEACHER',
-    student: 'STUDENT',
-    admin: 'ADMIN',
+    TEACHER: 'TEACHER',
+    STUDENT: 'STUDENT',
+    ADMIN: 'ADMIN',
 });
 
 export default AuthorityTypes;
