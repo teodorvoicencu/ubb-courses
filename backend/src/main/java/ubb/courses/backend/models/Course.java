@@ -27,11 +27,11 @@ public class Course extends BaseEntity {
     @Column(name = "name", nullable = false)
     @NotNull
     @Size(min=4, max = 32)
-    public String name;
+    private String name;
 
     @Column(name = "description", nullable = false)
     @NotNull
-    public String description;
+    private String description;
 
     @Column(name = "created_date", nullable = false, updatable = false)
     @CreatedDate
