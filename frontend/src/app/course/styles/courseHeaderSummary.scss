@@ -1,0 +1,36 @@
+@import '../../theme/variables';
+
+.courseHeader {
+    margin-right: $ternary-margin;
+    flex-grow: 1;
+}
+
+.courseSummary {
+    padding: $ternary-padding $ternary-padding 0 $ternary-padding;
+}
+
+.courseTeacher:after {
+    content: '\A';
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: #ccc;
+    margin-left: 0.6rem;
+    margin-right: 0.6rem;
+    margin-bottom: 0.1rem;
+    display: inline-block;
+}
+
+.courseOrigin {
+    display: flex;
+    flex-direction: row;
+    color: #777;
+}
+
+.courseActions {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: $primary-padding $ternary-padding $ternary-padding;
+}

@@ -1,12 +1,11 @@
 // @flow
 import * as React from 'react';
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
+import { NavLink } from 'react-router-dom';
 
 import placeholder from '../theme/static/holder.png';
 
 import type { Course } from './types';
-
 import './styles/courseCard.scss';
 
 type Props = {
@@ -23,7 +22,9 @@ const CourseCard = ({ course }: Props) => {
                 <Card.Title className={'title'}>{course.name}</Card.Title>
                 <Card.Subtitle className={'subtitle'}>{university}</Card.Subtitle>
                 <Card.Text>{course.description}</Card.Text>
-                <Button variant="primary">View</Button>
+                <NavLink className={'btn btn-primary'} to={`/courses/${course.id}`}>
+                    View
+                </NavLink>
             </Card.Body>
         </div>
     );

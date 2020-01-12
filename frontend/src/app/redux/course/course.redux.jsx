@@ -26,5 +26,5 @@ const INITIAL_STATE = {
 
 export const courseReducer = createReducer(INITIAL_STATE, {
     [Types.LOADING]: (state, { value }) => ({ ...state, loading: value }),
-    [Types.FETCH_COURSE_SUCCESS]: (state, { data }) => ({ ...state, data }),
+    [Types.FETCH_COURSE_SUCCESS]: (state, { data }) => ({ ...state, ...data }),
 });
