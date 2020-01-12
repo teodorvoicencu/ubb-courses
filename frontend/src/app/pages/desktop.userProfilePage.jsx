@@ -16,7 +16,7 @@ const UserProfile = (): React.Node => {
             <div className="row w-100 justify-content-center mt-3">
                 <div className="box">
                     <div className="card-header text-center">
-                        <h2>{user} Profile</h2>
+                        <h2>My Profile</h2>
                     </div>
                     <div className="cardBody">
                         <div className="row text-center m-3">
