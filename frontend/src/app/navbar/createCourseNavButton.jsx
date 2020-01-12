@@ -9,7 +9,7 @@ import './styles/createCourseNavButton.scss';
 const CreateCourseNavButton = (): React.Node => {
     const authorities = useSelector(state => state.user.authorities);
     return authorities.includes(AuthorityTypes.teacher) ? (
-        <NavLink className={'btn btn-primary createButton'} to={'/courses/create'}>
+        <NavLink className={'btn btn-success createButton'} to={'/courses/create'}>
             Create Course
         </NavLink>
     ) : null;
