@@ -1,11 +1,37 @@
 @import '../../theme/variables';
 
-.card {
-    margin: $ternary-margin $ternary-margin;
-    cursor: pointer;
+.container {
+    display: flex;
+    flex-direction: row;
+
+    height: 12rem;
     width: 100%;
+
+    border: 0.1rem solid $border-grey;
+    border-radius: $border-radius;
+
+    overflow: hidden;
+
+    padding: 0;
+    margin-bottom: $ternary-margin;
 }
 
-.card:hover {
-    background-color: lightgray;
+.body {
+    align-self: stretch;
+    border-left: 0.1rem solid $border-grey;
+}
+
+.image {
+    height: 12rem;
+    width: auto;
+
+    padding: 0;
+}
+
+.title {
+    margin: 0 0 $primary-margin;
+}
+
+.subtitle {
+    margin: 0 0 $secondary-margin;
 }
