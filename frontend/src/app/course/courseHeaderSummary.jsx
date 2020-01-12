@@ -4,7 +4,7 @@ import * as React from 'react';
 
 import './styles/courseHeaderSummary.scss';
 
-const isEnrolled = true;
+const isEnrolled = false;
 
 type Props = {
     title: string,
@@ -20,9 +20,11 @@ const CourseHeaderSummary = ({ title }: Props): React.Node => {
                     <h5>Course University</h5>
                 </div>
             </div>
-            <Button className={'enrollButton'} variant={'primary'} size={'lg'} block>
-                {isEnrolled ? 'Open Course' : 'Enroll'}
-            </Button>
+            <div className={'courseActions'}>
+                <Button variant={isEnrolled ? 'outline-primary' : 'primary'} size={'sm'}>
+                    {isEnrolled ? 'Open Course' : 'Enroll'}
+                </Button>
+            </div>
         </Card>
     );
 };

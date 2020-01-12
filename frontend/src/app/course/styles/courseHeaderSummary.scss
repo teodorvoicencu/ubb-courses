@@ -27,6 +27,10 @@
     color: #777;
 }
 
-.enrollButton {
-    margin-top: $ternary-margin;
+.courseActions {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: $primary-padding $ternary-padding $ternary-padding;
 }
