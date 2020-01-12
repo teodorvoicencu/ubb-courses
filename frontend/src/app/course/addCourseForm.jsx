@@ -2,6 +2,7 @@
 import * as React from 'react';
 import { Formik } from 'formik';
 import { Button, Form } from 'react-bootstrap';
+import { Redirect } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { CourseActions } from '../redux/course';
@@ -10,8 +11,6 @@ import { addCourseSchema } from './validation';
 import AddCourseFormInputs from './addCourseFromInputs';
 
 import './styles/addCourseForm.scss';
-import { Redirect } from 'react-router-dom';
-
 
 const AddCourseForm = (): React.Node => {
     const dispatch = useDispatch();
@@ -49,7 +48,7 @@ const AddCourseForm = (): React.Node => {
                 </>
             )}
         </Formik>
-    ): (
+    ) : (
         <Redirect to="/" />
     );
 };
