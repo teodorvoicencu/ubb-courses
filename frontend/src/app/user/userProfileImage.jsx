@@ -1,17 +1,15 @@
 // @flow
 import * as React from 'react';
 import { Col, Image, Row } from 'react-bootstrap';
+
 import './styles/userProfileImage.scss';
+import profileImage from '../theme/static/profileImage.jpg';
 
-type Props = {
-    imageUrl: string,
-};
-
-const UserProfileImage = ({ imageUrl }: Props): React.Node => {
+const UserProfileImage = (): React.Node => {
     return (
         <Row className="justify-content-md-center">
             <Col xs={4} md={2}>
-                <Image src={imageUrl} className={'profileImage'} />
+                <Image src={profileImage} className={'profileImage'} />
             </Col>
         </Row>
     );
