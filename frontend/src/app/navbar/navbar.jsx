@@ -41,7 +41,7 @@ const NavbarTop = (): React.Node => {
                         </NavLink>
                     </Nav>
                 ) : (
-                    <UserNav />
+                    <UserNav location={location} />
                 )}
             </Nav>
         </Navbar>

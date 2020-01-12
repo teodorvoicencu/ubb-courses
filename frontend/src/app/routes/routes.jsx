@@ -7,6 +7,7 @@ const RegisterPage = React.lazy(() => import('../pages/desktop.registerPage.jsx'
 const CoursePage = React.lazy(() => import('../pages/desktop.coursesPage.jsx'));
 const AddCoursePage = React.lazy(() => import('../pages/desktop.addCoursePage.jsx'));
 const CourseDetailsPage = React.lazy(() => import('../pages/desktop.courseDetailsPage.jsx'));
+const ProfilePage = React.lazy(() => import('../pages/desktop.userProfilePage.jsx'));
 
 const Routes = [
     { path: '/', exact: true, name: 'Home', component: HomePage },
@@ -15,5 +16,6 @@ const Routes = [
     { path: '/courses', exact: true, name: 'Courses', component: CoursePage },
     { path: '/courses/create', exact: true, name: 'AddCourse', component: AddCoursePage },
     { path: '/courses/:id', exact: true, name: 'Course', component: CourseDetailsPage },
+    { path: '/profile', exact: true, name: 'ProfilePage', component: ProfilePage },
 ];
 export default Routes;
