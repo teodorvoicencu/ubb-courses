@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
 import { UserActions } from '../redux/user';
+import AppRoutes from '../types/appRoutes';
 
 import CreateCourseNavButton from './createCourseNavButton';
 
@@ -28,7 +29,7 @@ const UserNav = ({ location }: Props): React.Node => {
                 <NavLink
                     className="nav-link"
                     isActive={() => location.pathname === profilePath}
-                    to={'/profile'}
+                    to={AppRoutes.PROFILE}
                     activeClassName="active"
                 >
                     {user}

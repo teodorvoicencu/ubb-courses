@@ -6,6 +6,7 @@ import { NavLink, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import NavRoutes from '../routes/navRoutes';
+import AppRoutes from '../types/appRoutes';
 
 import UserNav from './userNav';
 
@@ -36,7 +37,7 @@ const NavbarTop = (): React.Node => {
             <Nav>
                 {!isLoggedIn ? (
                     <Nav>
-                        <NavLink to={'/login'} className="nav-link">
+                        <NavLink to={AppRoutes.LOGIN} className="nav-link">
                             Login
                         </NavLink>
                     </Nav>

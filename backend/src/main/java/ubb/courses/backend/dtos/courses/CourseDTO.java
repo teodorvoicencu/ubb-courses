@@ -10,9 +10,13 @@ import javax.validation.constraints.Size;
 @Data
 @EqualsAndHashCode(callSuper = true)
 public class CourseDTO extends BaseDTO {
+
     @NotNull
     @Size(min = 4, max = 32)
-    public String name;
+    private String name;
+
     @NotNull
-    public String description;
+    private String description;
+
+    private OwnerDTO owner;
 }

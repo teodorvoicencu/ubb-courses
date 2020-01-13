@@ -11,8 +11,10 @@ public class CourseConverter implements IDTOConverter<CourseDTO, Course> {
     public CourseDTO createFrom(Course entity) {
         CourseDTO courseDto = new CourseDTO();
         courseDto.setId(entity.getId());
-        courseDto.name = entity.name;
-        courseDto.description = entity.getDescription();
+        courseDto.setName(entity.getName());
+        courseDto.setDescription(entity.getDescription());
+        OwnerDTO ownerDTO = new OwnerDTO(entity.getOwner().getId(),entity.getOwner().getName());
+        courseDto.setOwner(ownerDTO);
         return courseDto;
     }
 
@@ -20,8 +22,8 @@ public class CourseConverter implements IDTOConverter<CourseDTO, Course> {
     public Course createFrom(CourseDTO dto) {
         Course course = new Course();
         course.setId(dto.getId());
-        course.name = dto.name;
-        course.description = dto.description;
+        course.setName(dto.getName());
+        course.setDescription(dto.getDescription());
         return course;
     }
 }

@@ -4,7 +4,7 @@ const { Types, Creators } = createActions({
     fetchCourse: ['id'],
     fetchCourseSuccess: ['data'],
     fetchCourseFailure: [],
-    createCourse: ['name', 'description'],
+    createCourse: ['name', 'description', 'history'],
     createCourseSuccess: [],
     createCourseFailure: [],
     updateCourse: ['id', 'name', 'description'],

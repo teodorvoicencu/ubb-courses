@@ -4,6 +4,7 @@ import Card from 'react-bootstrap/Card';
 import { NavLink } from 'react-router-dom';
 
 import placeholder from '../theme/static/holder.png';
+import AppRoutes from '../types/appRoutes';
 
 import type { Course } from './types';
 import './styles/courseCard.scss';
@@ -22,7 +23,7 @@ const CourseCard = ({ course }: Props) => {
                 <Card.Title className={'title'}>{course.name}</Card.Title>
                 <Card.Subtitle className={'subtitle'}>{university}</Card.Subtitle>
                 <Card.Text>{course.description}</Card.Text>
-                <NavLink className={'btn btn-primary'} to={`/courses/${course.id}`}>
+                <NavLink className={'btn btn-primary'} to={AppRoutes.COURSE.DETAILS(course.id)}>
                     View
                 </NavLink>
             </Card.Body>
