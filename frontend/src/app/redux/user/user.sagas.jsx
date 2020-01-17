@@ -21,6 +21,7 @@ export function* init() {
                 yield put(
                     UserActions.initSuccess({
                         loggedIn: true,
+                        id: data.id,
                         name: data.name,
                         username: data.username,
                         authorities: data.authorities,
@@ -55,6 +56,7 @@ export function* login({ email, password }) {
             yield put(
                 UserActions.loginSuccess({
                     loggedIn: true,
+                    id: data.id,
                     name: data.name,
                     username: data.username,
                     authorities: data.authorities,

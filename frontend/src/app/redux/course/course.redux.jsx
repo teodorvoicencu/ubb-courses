@@ -7,7 +7,7 @@ const { Types, Creators } = createActions({
     createCourse: ['name', 'description', 'history'],
     createCourseSuccess: [],
     createCourseFailure: [],
-    updateCourse: ['id', 'name', 'description'],
+    updateCourse: ['id', 'name', 'description', 'history'],
     updateCourseSuccess: [],
     updateCourseFailure: [],
     deleteCourse: ['id'],

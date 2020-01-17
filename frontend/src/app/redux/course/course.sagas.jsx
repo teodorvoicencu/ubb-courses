@@ -34,13 +34,14 @@ export function* createCourse({ name, description, history }) {
     }
 }
 
-export function* updateCourse({ id, name, description }) {
+export function* updateCourse({ id, name, description, history }) {
     try {
         yield put(CourseActions.loading(true));
         const response = yield call(axios.put, `/courses/${id}`, { name, description });
         if (response.status === 200) {
             yield put(CourseActions.updateCourseSuccess());
         }
+        yield call(history.push, AppRoutes.COURSES);
         yield put(CourseActions.loading(false));
     } catch (error) {
         yield put(CourseActions.loading(false));
