@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card';
 import { NavLink } from 'react-router-dom';
 
 import placeholder from '../theme/static/holder.png';
-import AppRoutes from '../types/appRoutes';
+import { AppRoutes } from '../types';
 
 import type { Course } from './types';
 import './styles/courseCard.scss';

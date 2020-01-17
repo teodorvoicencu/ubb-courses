@@ -86,6 +86,7 @@
     ],
     "react/jsx-no-comment-textnodes": 0,
     "react/jsx-curly-brace-presence": 0,
+    "react/jsx-curly-newline": 0,
     "react/prop-types": 0,
     "react/no-unused-prop-types": 0,
     "react/no-danger": 0,

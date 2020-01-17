@@ -5,8 +5,8 @@ import Nav from 'react-bootstrap/Nav';
 import { NavLink, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-import NavRoutes from '../routes/navRoutes';
-import AppRoutes from '../types/appRoutes';
+import { NavRoutes } from '../routes';
+import { AppRoutes } from '../types';
 
 import UserNav from './userNav';
 

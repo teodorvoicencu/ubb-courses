@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
 import { UserActions } from '../redux/user';
-import AppRoutes from '../types/appRoutes';
+import { AppRoutes } from '../types';
 
 import CreateCourseNavButton from './createCourseNavButton';
 
