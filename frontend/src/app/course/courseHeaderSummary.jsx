@@ -1,12 +1,13 @@
 // @flow
 import { Button, Card } from 'react-bootstrap';
 import * as React from 'react';
-import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { NavLink, useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
 import './styles/courseHeaderSummary.scss';
 
 import { AppRoutes } from '../types';
+import { CourseActions } from '../redux/course';
 
 const isEnrolled = false;
 
@@ -18,6 +19,14 @@ type Props = {
 
 const CourseHeaderSummary = ({ title, ownerId, id }: Props): React.Node => {
     const user = useSelector(state => state.user.id);
+
+    const dispatch = useDispatch();
+    const history = useHistory();
+
+    const onDelete = React.useCallback(() => {
+        dispatch(CourseActions.deleteCourse(id, history));
+    }, [dispatch, history, id]);
+
     return (
         <Card className={'courseHeader'} bg={'light'}>
             <div className={'courseSummary'}>
@@ -33,11 +42,16 @@ const CourseHeaderSummary = ({ title, ownerId, id }: Props): React.Node => {
                 </Button>
                 {user === ownerId ? (
                     <NavLink
-                        className={'btn btn-warning btn-sm editButton'}
+                        className={'btn btn-warning btn-sm button'}
                         to={AppRoutes.COURSE.EDIT(id)}
                     >
                         Edit
                     </NavLink>
+                ) : null}
+                {user === ownerId ? (
+                    <Button className={'button'} variant={'danger'} size={'sm'} onClick={onDelete}>
+                        Delete
+                    </Button>
                 ) : null}
             </div>
         </Card>
