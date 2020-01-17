@@ -41,7 +41,7 @@ export function* updateCourse({ id, name, description, history }) {
         if (response.status === 200) {
             yield put(CourseActions.updateCourseSuccess());
         }
-        yield call(history.push, AppRoutes.COURSES);
+        yield call(history.push, AppRoutes.COURSE.DETAILS(id));
         yield put(CourseActions.loading(false));
     } catch (error) {
         yield put(CourseActions.loading(false));
@@ -49,13 +49,14 @@ export function* updateCourse({ id, name, description, history }) {
     }
 }
 
-export function* deleteCourse({ id }) {
+export function* deleteCourse({ id, history }) {
     try {
         yield put(CourseActions.loading(true));
         const response = yield call(axios.delete, `/courses/${id}`);
         if (response.status === 200) {
             yield put(CourseActions.deleteCourseSuccess());
         }
+        yield call(history.push, AppRoutes.COURSES);
         yield put(CourseActions.loading(false));
     } catch (error) {
         yield put(CourseActions.loading(false));
