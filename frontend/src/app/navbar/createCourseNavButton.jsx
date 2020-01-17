@@ -3,9 +3,8 @@ import * as React from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
-import AuthorityTypes from '../types/authority';
 import './styles/createCourseNavButton.scss';
-import AppRoutes from '../types/appRoutes';
+import { AppRoutes, AuthorityTypes } from '../types';
 
 const CreateCourseNavButton = (): React.Node => {
     const authorities = useSelector(state => state.user.authorities);

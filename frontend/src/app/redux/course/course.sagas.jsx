@@ -1,7 +1,7 @@
 import { call, put } from 'redux-saga/effects';
 import axios from 'axios';
 
-import AppRoutes from '../../types/appRoutes';
+import { AppRoutes } from '../../types';
 
 import CourseActions from './course.redux';
 

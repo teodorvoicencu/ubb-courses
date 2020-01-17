@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 
 import './styles/registerLink.scss';
-import AppRoutes from '../types/appRoutes';
+import { AppRoutes } from '../types';
 
 const RegisterLink = (): React.Node => {
     return (
