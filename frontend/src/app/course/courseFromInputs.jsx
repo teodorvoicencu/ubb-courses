@@ -10,7 +10,7 @@ type Props = {
     errors: FormikErrors,
 };
 
-const AddCourseFormInputs = (props: Props): React.Node => {
+const CourseFormInputs = (props: Props): React.Node => {
     return (
         <>
             <Form.Row>
@@ -51,4 +51,4 @@ const AddCourseFormInputs = (props: Props): React.Node => {
     );
 };
 
-export default AddCourseFormInputs;
+export default CourseFormInputs;
