@@ -11,7 +11,7 @@ export type RouteProps = {
 export const RouteTypes = Object.freeze({
     PUBLIC: 'PUBLIC',
     PRIVATE: {
-        TEACHER: 'TEACHER',
-        STUDENT: 'STUDENT',
+        TEACHER: 'PRIVATE_TEACHER',
+        STUDENT: 'PRIVATE_STUDENT',
     },
 });

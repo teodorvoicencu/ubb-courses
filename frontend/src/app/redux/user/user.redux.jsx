@@ -28,6 +28,7 @@ const INITIAL_STATE = {
     name: null,
     username: null,
     authorities: [],
+    id: null,
 };
 
 export const userReducer = createReducer(INITIAL_STATE, {

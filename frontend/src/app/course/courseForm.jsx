@@ -2,38 +2,43 @@
 import * as React from 'react';
 import { Formik } from 'formik';
 import { Button, Form } from 'react-bootstrap';
-import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
 
-import { CourseActions } from '../redux/course';
+import { CourseTypes } from '../redux/course';
 
 import { addCourseSchema } from './validation';
-import AddCourseFormInputs from './addCourseFromInputs';
+import CourseFormInputs from './courseFromInputs';
 
 import './styles/addCourseForm.scss';
 
-const AddCourseForm = (): React.Node => {
-    const dispatch = useDispatch();
-    const history = useHistory();
+type CourseFields = {
+    name: string,
+    description: string,
+};
 
+type Props = {
+    defaultValues: CourseFields,
+    save: CourseFields => CourseTypes.ADD_COURSE | CourseTypes.EDIT_COURSE,
+};
+
+const CourseForm = ({ defaultValues, save }: Props): React.Node => {
     const onAddCourse = React.useCallback(
         values => {
             const { name, description } = values;
-            dispatch(CourseActions.createCourse(name, description, history));
+            save(name, description);
         },
-        [dispatch, history],
+        [save],
     );
 
     return (
         <Formik
-            initialValues={{ name: '', description: '' }}
+            initialValues={defaultValues}
             validationSchema={addCourseSchema}
             onSubmit={onAddCourse}
         >
             {({ handleSubmit, handleChange, values, errors }) => (
                 <>
                     <Form noValidate onSubmit={handleSubmit}>
-                        <AddCourseFormInputs
+                        <CourseFormInputs
                             handleChange={handleChange}
                             values={values}
                             errors={errors}
@@ -41,7 +46,7 @@ const AddCourseForm = (): React.Node => {
                     </Form>
                     <div className={'text-center'}>
                         <Button variant={'primary'} type={'submit'} onClick={handleSubmit}>
-                            Add Course
+                            Save
                         </Button>
                     </div>
                 </>
@@ -50,4 +55,4 @@ const AddCourseForm = (): React.Node => {
     );
 };
 
-export default AddCourseForm;
+export default CourseForm;
