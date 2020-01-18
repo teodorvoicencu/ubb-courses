@@ -13,6 +13,9 @@ const { Types, Creators } = createActions({
     deleteCourse: ['id', 'history'],
     deleteCourseSuccess: [],
     deleteCourseFailure: [],
+    enrollCourse: ['id'],
+    enrollCourseSuccess: [],
+    enrollCourseFailure: [],
     loading: ['value'],
 });
 

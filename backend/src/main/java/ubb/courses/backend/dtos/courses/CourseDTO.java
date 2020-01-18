@@ -6,6 +6,8 @@ import ubb.courses.backend.dtos.BaseDTO;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.HashSet;
+import java.util.Set;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -18,5 +20,7 @@ public class CourseDTO extends BaseDTO {
     @NotNull
     private String description;
 
-    private OwnerDTO owner;
+    private PersonDTO owner;
+
+    private Set<PersonDTO> students = new HashSet<>();
 }

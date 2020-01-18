@@ -8,11 +8,15 @@ import ubb.courses.backend.dtos.BaseDTO;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
-public class OwnerDTO extends BaseDTO {
+public class PersonDTO extends BaseDTO {
+
     private String name;
 
-    public OwnerDTO(Integer id, String name){
+    private String email;
+
+    public PersonDTO(Integer id, String name, String email) {
         super(id);
-        this.name=name;
+        this.name = name;
+        this.email = email;
     }
 }

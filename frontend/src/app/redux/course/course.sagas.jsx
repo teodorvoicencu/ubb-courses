@@ -63,3 +63,17 @@ export function* deleteCourse({ id, history }) {
         yield put(CourseActions.deleteCourseFailure());
     }
 }
+
+export function* enrollCourse({ id }) {
+    try {
+        yield put(CourseActions.loading(true));
+        const response = yield call(axios.post, `/courses/${id}/enroll`);
+        if (response.status === 200) {
+            yield put(CourseActions.enrollCourseSuccess());
+        }
+        yield put(CourseActions.loading(false));
+    } catch (error) {
+        yield put(CourseActions.loading(false));
+        yield put(CourseActions.enrollCourseFailure());
+    }
+}
