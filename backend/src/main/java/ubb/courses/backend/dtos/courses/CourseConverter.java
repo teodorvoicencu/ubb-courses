@@ -2,6 +2,7 @@ package ubb.courses.backend.dtos.courses;
 
 import org.springframework.stereotype.Component;
 import ubb.courses.backend.dtos.IDTOConverter;
+import ubb.courses.backend.dtos.lesson.LessonDTO;
 import ubb.courses.backend.models.Course;
 
 import java.util.stream.Collectors;
@@ -25,6 +26,10 @@ public class CourseConverter implements IDTOConverter<CourseDTO, Course> {
                                 enrollment.getUser().getEmail()))
                 .collect(Collectors.toSet()));
         courseDto.setOwner(ownerDTO);
+        courseDto.setLessons(entity.getLessons()
+                .stream()
+                .map(LessonDTO::new)
+                .collect(Collectors.toList()));
         return courseDto;
     }
 

@@ -1,4 +1,4 @@
-package ubb.courses.backend.controllers.user;
+package ubb.courses.backend.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -21,7 +21,7 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/auth")
-public class UserController implements IUserController {
+public class UserController {
 
     private final IUserService userService;
     private final IDTOConverter<RegisterDTO, User> registerConverter;

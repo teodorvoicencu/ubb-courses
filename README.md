@@ -2,7 +2,7 @@
 
 The aim of this project is to create a friendlier environment for the students to learn during the university.
 Our project will enable course material upload and organizing them into bite-sized lessons.
-We aim to support uploading images, videos and other media formats. We aim to increase student interactivity with features
+We aim to support uploading images, videos and other lessons formats. We aim to increase student interactivity with features
 such as polls, quizzes, and projects such that the students will be able to more easily learn the subjects that matter.
 
 # Core Technologies

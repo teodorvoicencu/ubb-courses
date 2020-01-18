@@ -1,21 +1,19 @@
 package ubb.courses.backend.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import ubb.courses.backend.models.authorization.User;
 import ubb.courses.backend.models.generic.BaseEntity;
+import ubb.courses.backend.models.lesson.Lesson;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.util.Date;
-import java.util.Set;
+import java.util.*;
 
+@Builder
 @Entity
 @Table(name = "courses")
 @Getter
@@ -47,5 +45,9 @@ public class Course extends BaseEntity {
     private User owner;
 
     @OneToMany(mappedBy = "course")
-    private Set<Enrollment> students;
+    private Set<Enrollment> students = new HashSet<>();
+
+    @OneToMany(mappedBy = "course")
+    @OrderBy("orderIndex asc")
+    private List<Lesson> lessons = new ArrayList<>();
 }
