@@ -17,7 +17,7 @@ type Props = {
     course: Course,
 };
 
-const UpdateCoursePage = ({ course }: Props): React.Node => {
+const EditCoursePage = ({ course }: Props): React.Node => {
     const dispatch = useDispatch();
     const history = useHistory();
     const onSave = React.useCallback(
@@ -54,4 +54,4 @@ const UpdateCoursePage = ({ course }: Props): React.Node => {
     );
 };
 
-export default withCourse(UpdateCoursePage);
+export default withCourse(EditCoursePage);
