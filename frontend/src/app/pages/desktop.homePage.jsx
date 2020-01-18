@@ -1,10 +1,14 @@
 // @flow
 import * as React from 'react';
 
+import { LandingTitle, LandingDetails, LandingDisplay } from '../landing';
+
 const HomePage = (): React.Node => {
     return (
         <>
-            <h1>This is home</h1>
+            <LandingTitle />
+            <LandingDetails />
+            <LandingDisplay />
         </>
     );
 };
