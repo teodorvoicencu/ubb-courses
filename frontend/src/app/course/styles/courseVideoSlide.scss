@@ -1,0 +1,40 @@
+@import '../../theme/variables';
+
+.courseVideoSlide {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  align-items: center;
+  padding-left: $ternary-padding;
+  padding-right: $ternary-padding;
+}
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  width: 100%;
+  height: 0;
+}
+
+.videoWrapper iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.descriptionButton {
+  color: #fff;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 1.5rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+}
+
+.descriptionIcon {
+  fill: #fff;
+  width: 2rem;
+  height: 2rem;
+}
