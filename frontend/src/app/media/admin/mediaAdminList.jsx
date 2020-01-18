@@ -4,11 +4,13 @@ import { useDispatch } from 'react-redux';
 import { Button, ListGroup } from 'react-bootstrap';
 import ArrowUp from 'react-ionicons/lib/IosArrowDropup';
 import ArrowDown from 'react-ionicons/lib/IosArrowDropdown';
+import { NavLink } from 'react-router-dom';
 
 import type { MediaItem } from '../types';
 import type { Course } from '../../course/types';
 import './style/mediaAdminList.scss';
 import { CourseActions } from '../../redux/course';
+import { AppRoutes } from '../../types';
 
 import LightButton from './lightButton';
 
@@ -80,9 +82,12 @@ const MediaAdminList = ({ course }: Props) => {
                 <Button variant={'success'} className={'button'} onClick={submitOrder}>
                     Submit Order
                 </Button>
-                <Button variant={'primary'} className={'button'}>
+                <NavLink
+                    className={'btn btn-primary button'}
+                    to={AppRoutes.COURSE.ADD_LESSON(course.id)}
+                >
                     Add
-                </Button>
+                </NavLink>
             </div>
         </>
     );

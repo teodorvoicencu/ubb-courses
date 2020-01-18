@@ -10,9 +10,10 @@ const LoginPage = React.lazy(() => import('../pages/desktop.loginPage.jsx'));
 const RegisterPage = React.lazy(() => import('../pages/desktop.registerPage.jsx'));
 const CoursePage = React.lazy(() => import('../pages/desktop.coursesPage.jsx'));
 const CreateCoursePage = React.lazy(() => import('../pages/desktop.createCoursePage.jsx'));
-const UpdateCoursePage = React.lazy(() => import('../pages/desktop.editCoursePage.jsx'));
+const EditCoursePage = React.lazy(() => import('../pages/desktop.editCoursePage.jsx'));
 const CourseDetailsPage = React.lazy(() => import('../pages/desktop.courseDetailsPage.jsx'));
 const ProfilePage = React.lazy(() => import('../pages/desktop.userProfilePage.jsx'));
+const AddLessonPage = React.lazy(() => import('../pages/desktop.addLessonPage.jsx'));
 
 const Routes = [
     {
@@ -54,7 +55,7 @@ const Routes = [
         path: AppRoutes.COURSE.EDIT(':id'),
         exact: true,
         name: 'EditCourse',
-        component: UpdateCoursePage,
+        component: EditCoursePage,
         type: RouteTypes.PRIVATE.TEACHER,
     },
     {
@@ -70,6 +71,13 @@ const Routes = [
         name: 'ProfilePage',
         component: ProfilePage,
         type: RouteTypes.PRIVATE.STUDENT,
+    },
+    {
+        path: AppRoutes.COURSE.ADD_LESSON(':id'),
+        exact: true,
+        name: 'AddLessonPage',
+        component: AddLessonPage,
+        type: RouteTypes.PUBLIC,
     },
 ];
 export default Routes;
