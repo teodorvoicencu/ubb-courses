@@ -2,15 +2,56 @@ import { call, put } from 'redux-saga/effects';
 import axios from 'axios';
 
 import { AppRoutes } from '../../types';
+import type { MediaItem } from '../../media';
+import { MediaType } from '../../media';
 
 import CourseActions from './course.redux';
+
+const mockMediaList: MediaItem[] = [
+    {
+        id: 0,
+        index: 0,
+        title: 'a slide about slides',
+        content: 'it aint much but its honest work',
+        url: 'http://www.example.org',
+        type: MediaType.TEXT,
+    },
+    {
+        id: 1,
+        index: 1,
+        title: 'why love slides?',
+        content: 'it aint much but its honest work',
+        url: 'http://www.example.org',
+        type: MediaType.TEXT,
+    },
+    {
+        id: 2,
+        index: 2,
+        title: 'why hate slides?',
+        content: 'it aint much but its honest work',
+        url: 'http://www.example.org',
+        type: MediaType.VIDEO,
+    },
+    {
+        id: 3,
+        index: 3,
+        title: 'making a living selling used jalapenos',
+        content: 'it aint much but its honest work',
+        url: 'http://www.example.org',
+        type: MediaType.VIDEO,
+    },
+];
 
 export function* fetchCourse({ id }) {
     try {
         yield put(CourseActions.loading(true));
         const response = yield call(axios.get, `/courses/${id}`);
         if (response.status === 200) {
-            yield put(CourseActions.fetchCourseSuccess({ data: response.data }));
+            yield put(
+                CourseActions.fetchCourseSuccess({
+                    data: { ...response.data, media: mockMediaList },
+                }),
+            );
         }
         yield put(CourseActions.loading(false));
     } catch (error) {

@@ -10,7 +10,7 @@ const LoginPage = React.lazy(() => import('../pages/desktop.loginPage.jsx'));
 const RegisterPage = React.lazy(() => import('../pages/desktop.registerPage.jsx'));
 const CoursePage = React.lazy(() => import('../pages/desktop.coursesPage.jsx'));
 const CreateCoursePage = React.lazy(() => import('../pages/desktop.createCoursePage.jsx'));
-const UpdateCoursePage = React.lazy(() => import('../pages/desktop.updateCoursePage.jsx'));
+const UpdateCoursePage = React.lazy(() => import('../pages/desktop.editCoursePage.jsx'));
 const CourseDetailsPage = React.lazy(() => import('../pages/desktop.courseDetailsPage.jsx'));
 const ProfilePage = React.lazy(() => import('../pages/desktop.userProfilePage.jsx'));
 

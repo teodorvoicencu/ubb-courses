@@ -1,0 +1,11 @@
+@import '../../../theme/variables';
+
+.list-item {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.list-title {
+  font-weight: bold;
+}
