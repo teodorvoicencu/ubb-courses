@@ -92,7 +92,17 @@ public class CourseService implements ICourseService {
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new CourseException(String.format("Failed to find user with id=%d.", userId)));
 
+        if (course.getOwner().getId() == userId) {
+            throw new CourseException("You are the owner of the course!" +
+                    " You cannot enlist to your own course! Who would teach it? :P");
+        }
+
+        if (enrollmentRepository.findByCourseIdInAndUserId(courseId, userId) != null) {
+            throw new CourseException(String.format("User already enrolled in course with id=%d.", userId));
+        }
+
         this.enrollmentRepository.save(new Enrollment(course, user));
+
         return course;
     }
 }
