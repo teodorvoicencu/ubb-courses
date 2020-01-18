@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ubb.courses.backend.annotations.IsCourseOwner;
+import ubb.courses.backend.annotations.IsStudent;
 import ubb.courses.backend.annotations.IsTeacher;
 import ubb.courses.backend.dtos.courses.CourseConverter;
 import ubb.courses.backend.dtos.courses.CourseDTO;
@@ -59,4 +60,11 @@ public class CourseController implements ICourseController {
         course.setId(id);
         return ResponseEntity.ok(this.courseConverter.createFrom(this.courseService.updateCourse(course)));
     }
+
+    @IsStudent
+    @GetMapping("{id}/enroll")
+    public ResponseEntity<CourseDTO> enroll(@PathVariable Integer id){
+        return ResponseEntity.ok(this.courseConverter.createFrom(this.courseService.enrollStudent(id)));
+    }
+
 }
