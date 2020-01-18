@@ -62,7 +62,7 @@ public class CourseController implements ICourseController {
     }
 
     @IsStudent
-    @GetMapping("{id}/enroll")
+    @PostMapping("{id}/enroll")
     public ResponseEntity<CourseDTO> enroll(@PathVariable Integer id){
         return ResponseEntity.ok(this.courseConverter.createFrom(this.courseService.enrollStudent(id)));
     }

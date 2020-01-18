@@ -14,7 +14,7 @@ type Props = {
 const CourseHeader = ({ course }: Props): React.Node => {
     return (
         <div className={'row'}>
-            <CourseHeaderSummary title={course.name} ownerId={course.owner.id} id={course.id} />
+            <CourseHeaderSummary {...course} ownerId={course.owner.id} />
             <CourseHeaderStats />
         </div>
     );

@@ -4,6 +4,8 @@ import org.springframework.stereotype.Component;
 import ubb.courses.backend.dtos.IDTOConverter;
 import ubb.courses.backend.models.Course;
 
+import java.util.stream.Collectors;
+
 @Component
 public class CourseConverter implements IDTOConverter<CourseDTO, Course> {
 
@@ -13,7 +15,15 @@ public class CourseConverter implements IDTOConverter<CourseDTO, Course> {
         courseDto.setId(entity.getId());
         courseDto.setName(entity.getName());
         courseDto.setDescription(entity.getDescription());
-        OwnerDTO ownerDTO = new OwnerDTO(entity.getOwner().getId(),entity.getOwner().getName());
+        PersonDTO ownerDTO = new PersonDTO(entity.getOwner().getId(), entity.getOwner().getName(), entity.getOwner().getEmail());
+        courseDto.setStudents(entity.getStudents()
+                .stream()
+                .map(enrollment ->
+                        new PersonDTO(
+                                enrollment.getUser().getId(),
+                                enrollment.getUser().getName(),
+                                enrollment.getUser().getEmail()))
+                .collect(Collectors.toSet()));
         courseDto.setOwner(ownerDTO);
         return courseDto;
     }

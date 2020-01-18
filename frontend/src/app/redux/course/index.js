@@ -1,5 +1,11 @@
 import CourseActions, { CourseTypes, courseReducer } from './course.redux';
-import { createCourse, fetchCourse, updateCourse, deleteCourse } from './course.sagas';
+import {
+    createCourse,
+    fetchCourse,
+    updateCourse,
+    deleteCourse,
+    enrollCourse,
+} from './course.sagas';
 
 export {
     CourseActions,
@@ -9,4 +15,5 @@ export {
     createCourse,
     updateCourse,
     deleteCourse,
+    enrollCourse,
 };
