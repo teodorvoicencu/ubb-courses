@@ -1,7 +1,8 @@
+// @flow
 import * as React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 
-const PageDetail = (): React.Node => {
+const LandingDetails = (): React.Node => {
     return (
         <Container fluid>
             <Row>
@@ -42,4 +43,4 @@ const PageDetail = (): React.Node => {
     );
 };
 
-export default PageDetail;
+export default LandingDetails;

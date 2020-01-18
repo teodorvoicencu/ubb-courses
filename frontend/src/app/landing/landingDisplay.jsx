@@ -1,9 +1,10 @@
+// @flow
 import * as React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 
 import TeamProfile from './teamProfile';
 
-const TeamDisplay = (): React.Node => {
+const LandingDisplay = (): React.Node => {
     return (
         <Container fluid>
             <Row>
@@ -27,4 +28,4 @@ const TeamDisplay = (): React.Node => {
     );
 };
 
-export default TeamDisplay;
+export default LandingDisplay;

@@ -1,7 +1,11 @@
+// @flow
 import * as React from 'react';
 import { Col, Container, Jumbotron, Row } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 
-const PageTitle = (): React.Node => {
+import { AppRoutes } from '../types';
+
+const LandingTitle = (): React.Node => {
     return (
         <Jumbotron>
             <Container fluid>
@@ -15,9 +19,13 @@ const PageTitle = (): React.Node => {
                         <hr className="my-4" />
                         <br />
                         <p className="lead">
-                            <a className="btn btn-primary btn-lg" role="button" href="/courses">
+                            <NavLink
+                                className="btn btn-primary btn-lg"
+                                role="button"
+                                to={AppRoutes.COURSES}
+                            >
                                 Explore courses
-                            </a>
+                            </NavLink>
                         </p>
                     </Col>
                 </Row>
@@ -26,4 +34,4 @@ const PageTitle = (): React.Node => {
     );
 };
 
-export default PageTitle;
+export default LandingTitle;
