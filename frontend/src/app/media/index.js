@@ -1,4 +1,3 @@
-// @flow
 import type { MediaItem } from './types';
 import { MediaType } from './types';
 
