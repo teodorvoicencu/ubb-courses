@@ -6,10 +6,14 @@ import Button from 'react-bootstrap/Button';
 
 import './styles/courseNavigationHeader.scss';
 
-const CourseNavigationHeader = ({ onNextSlide, onPrevSlide }): React.Node => {
+type Props = {
+    name: string,
+};
+
+const CourseNavigationHeader = ({ name, onNextSlide, onPrevSlide }: Props): React.Node => {
     return (
         <div className="navHeader">
-            <h5>{'Nume Curs'}</h5>
+            <h5>{name}</h5>
             <div className="navButtonRow">
                 <Button
                     variant="outline-primary"

@@ -5,19 +5,19 @@ import Play from 'react-ionicons/lib/MdPlay';
 import Star from 'react-ionicons/lib/MdStar';
 
 import './styles/courseNavigation.scss';
-import type { MediaItem } from './types';
+import type { Course } from './types';
 import { MediaType } from './types';
 import CourseNavigationHeader from './courseNavigationHeader';
 
 type Props = {
-    mediaItems: MediaItem[],
+    course: Course,
 };
 
 const CourseNavigation = (props: Props): React.Node => {
-    const { mediaItems } = props;
+    const { name, mediaItems } = props.course;
     return (
         <div className="courseNavContainer">
-            <CourseNavigationHeader {...props} />
+            <CourseNavigationHeader name={name} {...props} />
             <Nav variant="pills" className="courseNav">
                 {mediaItems.map(({ id, title, type }) => {
                     return (

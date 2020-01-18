@@ -34,7 +34,7 @@ const CourseContent = ({ course }: Props): React.Node => {
             <Row className="tabContainer">
                 <Col sm={2} className="colNoMargin dropShadow">
                     <CourseNavigation
-                        mediaItems={mediaItems}
+                        course={course}
                         onNextSlide={handleNextSlide}
                         onPrevSlide={handlePrevSlide}
                     />
