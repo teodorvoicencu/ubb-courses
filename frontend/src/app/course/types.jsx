@@ -14,4 +14,5 @@ export type Course = {
     description: string,
     owner: Person,
     students: Person[],
+    slides: Slide[],
 };
