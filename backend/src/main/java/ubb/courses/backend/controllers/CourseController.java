@@ -1,4 +1,4 @@
-package ubb.courses.backend.controllers.course;
+package ubb.courses.backend.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/courses")
-public class CourseController implements ICourseController {
+public class CourseController  {
 
     private final ICourseService courseService;
     private final ILessonService lessonService;
