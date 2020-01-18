@@ -1,9 +1,8 @@
-// eslint-disable-next-line import/order
+// @flow
 import * as React from 'react';
-
-import './styles/landingPage.scss';
 import { Image } from 'react-bootstrap';
 
+import './styles/landingPage.scss';
 import profileImage from '../theme/static/profileImage.jpg';
 
 type Props = {
