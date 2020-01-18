@@ -14,6 +14,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Table(name = "courses")
@@ -26,7 +27,7 @@ public class Course extends BaseEntity {
 
     @Column(name = "name", nullable = false)
     @NotNull
-    @Size(min=4, max = 32)
+    @Size(min = 4, max = 32)
     private String name;
 
     @Column(name = "description", nullable = false)
@@ -41,7 +42,10 @@ public class Course extends BaseEntity {
     @LastModifiedDate
     private Date modifiedDate;
 
-    @ManyToOne(cascade = CascadeType.DETACH)
-    @JoinColumn(name = "owner_id",referencedColumnName = "id")
+    @ManyToOne
+    @JoinColumn(name = "owner_id", nullable = false)
     private User owner;
+
+    @OneToMany(mappedBy = "course")
+    private Set<Enrollment> students;
 }

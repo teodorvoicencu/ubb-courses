@@ -57,7 +57,7 @@ public class CourseService implements ICourseService {
     @Transactional
     public void deleteCourse(Integer id) {
         if (this.courseRepository.existsById(id)) {
-            this.enrollmentRepository.deleteAll(this.enrollmentRepository.findAllByCourseId(id));
+            this.enrollmentRepository.deleteAllByCourseId(id);
             this.courseRepository.deleteById(id);
         } else {
             throw new CourseException(("Course not found!"));
@@ -83,11 +83,14 @@ public class CourseService implements ICourseService {
             throw new CourseException("Course not found!");
         }
 
-        @SuppressWarnings("OptionalGetWithoutIsPresent")
-        Course course = courseRepository.findById(courseId).get();
+        Course course = courseRepository.findById(courseId).orElseThrow(() -> new CourseException("Course not found!"));
 
-        @SuppressWarnings("OptionalGetWithoutIsPresent")
-        User user = this.userRepository.findById(this.securityService.getUserId()).get();
+        int userId = securityService.getCurrentUser()
+                .orElseThrow(() -> new CourseException("Trying to get current user returned Optional.empty()."))
+                .getId();
+
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new CourseException(String.format("Failed to find user with id=%d.", userId)));
 
         this.enrollmentRepository.save(new Enrollment(course, user));
         return course;
