@@ -5,6 +5,8 @@ import {
     updateCourse,
     deleteCourse,
     enrollCourse,
+    createLesson,
+    reorderLesson,
 } from './course.sagas';
 
 export {
@@ -16,4 +18,6 @@ export {
     updateCourse,
     deleteCourse,
     enrollCourse,
+    createLesson,
+    reorderLesson,
 };
