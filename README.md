@@ -67,7 +67,7 @@ It is written in React with:
 * Dividing the name of the component with dots (ex: `course.redux.jsx`, `desktop.coursePage.jsx`) should be done only for redux and sagas files and for final pages.
 * Component names should always be upper camel case, excepting the Higher Order Components.
 
-### Tips 
+#### Tips 
 * Always run `yarn fix` before pushing, otherwise the JS Tests will fail.
 * Try to reuse as much code as possible.
 * Keep the code clean and name the variables properly.
