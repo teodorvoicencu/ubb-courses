@@ -48,7 +48,24 @@ const CourseHeaderSummary = ({ name, ownerId, id, students }: Props): React.Node
                 </div>
             </div>
             <div className={'courseActions'}>
-                {user !== ownerId ? (
+                {user === ownerId ? (
+                    <>
+                        <NavLink
+                            className={'btn btn-warning btn-sm button'}
+                            to={AppRoutes.COURSE.EDIT(id)}
+                        >
+                            Edit
+                        </NavLink>
+                        <Button
+                            className={'button'}
+                            variant={'danger'}
+                            size={'sm'}
+                            onClick={onDelete}
+                        >
+                            Delete
+                        </Button>
+                    </>
+                ) : (
                     <Button
                         variant={enrolled ? 'success' : 'outline-primary'}
                         size={'sm'}
@@ -56,20 +73,7 @@ const CourseHeaderSummary = ({ name, ownerId, id, students }: Props): React.Node
                     >
                         {enrolled ? 'Open Course' : 'Enroll'}
                     </Button>
-                ) : null}
-                {user === ownerId ? (
-                    <NavLink
-                        className={'btn btn-warning btn-sm button'}
-                        to={AppRoutes.COURSE.EDIT(id)}
-                    >
-                        Edit
-                    </NavLink>
-                ) : null}
-                {user === ownerId ? (
-                    <Button className={'button'} variant={'danger'} size={'sm'} onClick={onDelete}>
-                        Delete
-                    </Button>
-                ) : null}
+                )}
             </div>
         </Card>
     );
