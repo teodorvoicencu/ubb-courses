@@ -1,39 +1,40 @@
 @import '../../theme/variables';
 
 .navHeader {
-  border-bottom: 0.1rem solid #ccc;
-  padding: $primary-padding;
+    border-bottom: 0.1rem solid #ccc;
+    padding: $primary-padding;
 }
 
 h5 {
-  text-align: center;
-  padding: 0.5rem;
+    text-align: center;
+    padding: 0.5rem;
 }
 
 h6 {
-  margin-bottom: 0.2rem;
+    margin-bottom: 0.2rem;
 }
 
 .navButtonRow {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .navButtonRow svg {
-  fill: #007bff;
+    fill: #007bff;
 }
 
-.navBack, .navForward {
-  flex-grow: 0.45;
-  display: flex;
-  align-items: center;
+.navBack,
+.navForward {
+    flex-grow: 0.45;
+    display: flex;
+    align-items: center;
 }
 
 .navBack {
-  justify-content: flex-start;
+    justify-content: flex-start;
 }
 
 .navForward {
-  justify-content: flex-end;
+    justify-content: flex-end;
 }

@@ -6,17 +6,6 @@ export type Person = {
     email: string,
 };
 
-export type Slide = {};
-
-export type Course = {
-    id: number,
-    name: string,
-    description: string,
-    owner: Person,
-    students: Person[],
-    slides: Slide[],
-};
-
 /**
  * Enumeration of possible media types.
  */
@@ -38,4 +27,13 @@ export type MediaItem = {
     content: string,
     url: string,
     type: $Values<typeof MediaType>,
+};
+
+export type Course = {
+    id: number,
+    name: string,
+    description: string,
+    owner: Person,
+    students: Person[],
+    mediaItems: MediaItem[],
 };
