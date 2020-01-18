@@ -5,9 +5,12 @@ export type Owner = {
     name: string,
 };
 
+export type Slide = {};
+
 export type Course = {
     id: number,
     name: string,
     description: string,
     owner: Owner,
+    slides: Slide[],
 };
