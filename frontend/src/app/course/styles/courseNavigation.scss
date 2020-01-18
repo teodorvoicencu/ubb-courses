@@ -1,56 +1,56 @@
 @import '../../theme/variables';
 
 .courseNavContainer {
-  display: grid;
+    display: grid;
 }
 
 .courseNav {
-  grid-column: 1;
-  grid-row: 2;
-  display: flex;
-  flex-direction: column;
-  padding: $primary-padding;
-  margin-left: $secondary-margin;
+    grid-column: 1;
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    padding: $primary-padding;
+    margin-left: $secondary-margin;
 }
 
 .navItem {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .navLink {
-  text-align: center;
-  color: #444444;
+    text-align: center;
+    color: #444444;
 }
 
 .navLink.active {
-  background: none !important;
-  color: #007bff !important;
+    background: none !important;
+    color: #007bff !important;
 }
 
 .slideNavIcon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 1.7rem;
-  height: 1.7rem;
-  border: 0.1rem solid #aaa;
-  border-radius: 20%;
-  background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.7rem;
+    height: 1.7rem;
+    border: 0.1rem solid #aaa;
+    border-radius: 20%;
+    background: #fff;
 }
 
 .navLine {
-  grid-column: 1;
-  grid-row: 2;
-  z-index: -10;
-  margin-top: 2rem;
-  margin-left: 1.95rem;
-  border-left: solid rgba(33, 36, 44, 0.16);
+    grid-column: 1;
+    grid-row: 2;
+    z-index: -10;
+    margin-top: 2rem;
+    margin-left: 1.95rem;
+    border-left: solid rgba(33, 36, 44, 0.16);
 }
 
 .icon {
-  width: 1.1rem;
-  height: 1.1rem;
+    width: 1.1rem;
+    height: 1.1rem;
 }

@@ -1,26 +1,28 @@
-html, body, #root {
-  height: 100%;
+html,
+body,
+#root {
+    height: 100%;
 }
 
 #root {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .navbar {
-  z-index: 2;
+    z-index: 2;
 }
 
 .colNoMargin {
-  padding: 0;
+    padding: 0;
 }
 
 .dropShadow {
-  z-index: 1;
-  box-shadow: 0 0 1rem black;
+    z-index: 1;
+    box-shadow: 0 0 1rem black;
 }
 
 .tabContainer {
-  margin: 0;
-  flex-grow: 1;
+    margin: 0;
+    flex-grow: 1;
 }

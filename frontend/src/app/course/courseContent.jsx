@@ -17,26 +17,30 @@ const CourseContent = ({ course }: Props): React.Node => {
 
     const handleSlideIndexChange = newSlideIndex => setSlideIndex(newSlideIndex);
 
-    const slides = course.slides;
+    // Sort based on index
+    const { mediaItems } = course;
+    mediaItems.sort((x, y) => x.index - y.index);
+
     const handleNextSlide = () => {
-        setSlideIndex(Math.min(slideIndex + 1, slides.length - 1));
+        setSlideIndex(Math.min(slideIndex + 1, mediaItems.length - 1));
     };
     const handlePrevSlide = () => {
         setSlideIndex(Math.max(slideIndex - 1, 0));
     };
 
+    const currentMediaItem = mediaItems[slideIndex];
     return (
-        <Tab.Container activeKey={slideIndex} onSelect={handleSlideIndexChange}>
+        <Tab.Container activeKey={currentMediaItem.id} onSelect={handleSlideIndexChange}>
             <Row className="tabContainer">
                 <Col sm={2} className="colNoMargin dropShadow">
                     <CourseNavigation
-                        slides={course.slides}
+                        mediaItems={mediaItems}
                         onNextSlide={handleNextSlide}
                         onPrevSlide={handlePrevSlide}
                     />
                 </Col>
                 <Col sm={10} className="colNoMargin">
-                    <CourseSlideContent mediaItem={course.slides[slideIndex]} />
+                    <CourseSlideContent mediaItem={currentMediaItem} />
                 </Col>
             </Row>
         </Tab.Container>
