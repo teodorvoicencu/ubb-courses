@@ -10,6 +10,8 @@ import {
     updateCourse,
     deleteCourse,
     enrollCourse,
+    createLesson,
+    reorderLesson,
 } from '../redux/course';
 
 export default function* rootSaga() {
@@ -27,6 +29,8 @@ export default function* rootSaga() {
         yield all([takeLatest(CourseTypes.UPDATE_COURSE, updateCourse)]);
         yield all([takeLatest(CourseTypes.DELETE_COURSE, deleteCourse)]);
         yield all([takeLatest(CourseTypes.ENROLL_COURSE, enrollCourse)]);
+        yield all([takeLatest(CourseTypes.CREATE_LESSON, createLesson)]);
+        yield all([takeLatest(CourseTypes.REORDER_LESSON, reorderLesson)]);
     } catch (err) {
         // eslint-disable-next-line no-console
         console.log(err);

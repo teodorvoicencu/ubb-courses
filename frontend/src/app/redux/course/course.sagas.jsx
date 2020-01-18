@@ -77,3 +77,36 @@ export function* enrollCourse({ id }) {
         yield put(CourseActions.enrollCourseFailure());
     }
 }
+
+export function* createLesson({ courseID, title, content, url, type }) {
+    try {
+        yield put(CourseActions.loading(true));
+        const response = yield call(axios.post, `/courses/${courseID}/lessons`, {
+            title,
+            content,
+            url,
+            type,
+        });
+        if (response.status === 200) {
+            yield put(CourseActions.createLessonSuccess());
+        }
+        yield put(CourseActions.loading(false));
+    } catch (error) {
+        yield put(CourseActions.loading(false));
+        yield put(CourseActions.createLessonFailure());
+    }
+}
+
+export function* reorderLesson({ courseID, lessonID, order }) {
+    try {
+        yield put(CourseActions.loading(true));
+        const response = yield call(axios.post, `/courses/${courseID}/lessons/${lessonID}`, order);
+        if (response.status === 200) {
+            yield put(CourseActions.reorderLessonSuccess());
+        }
+        yield put(CourseActions.loading(false));
+    } catch (error) {
+        yield put(CourseActions.loading(false));
+        yield put(CourseActions.reorderLessonFailure());
+    }
+}
