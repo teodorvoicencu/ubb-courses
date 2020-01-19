@@ -39,6 +39,7 @@ const CourseContent = ({ course }: Props): React.Node => {
                 <Col sm={2} className="colNoMargin dropShadow">
                     <CourseNavigation
                         course={course}
+                        slideIndex={slideIndex}
                         onNextSlide={handleNextSlide}
                         onPrevSlide={handlePrevSlide}
                     />
