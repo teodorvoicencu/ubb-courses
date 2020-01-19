@@ -10,12 +10,19 @@ type Props = {
     name: string,
 };
 
-const CourseNavigationHeader = ({ name, onNextSlide, onPrevSlide }: Props): React.Node => {
+const CourseNavigationHeader = ({
+    name,
+    onNextSlide,
+    onPrevSlide,
+    firstSlide,
+    lastSlide,
+}: Props): React.Node => {
     return (
         <div className="navHeader">
             <h5>{name}</h5>
             <div className="navButtonRow">
                 <Button
+                    disabled={firstSlide}
                     variant="outline-primary"
                     size="sm"
                     className="navBack"
@@ -25,6 +32,7 @@ const CourseNavigationHeader = ({ name, onNextSlide, onPrevSlide }: Props): Reac
                     <h6>Prev</h6>
                 </Button>
                 <Button
+                    disabled={lastSlide}
                     variant="outline-primary"
                     size="sm"
                     className="navForward"
