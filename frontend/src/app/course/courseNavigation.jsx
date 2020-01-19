@@ -15,10 +15,17 @@ type Props = {
 };
 
 const CourseNavigation = (props: Props): React.Node => {
+    const { slideIndex } = props;
     const { name, lessons } = props.course;
+
     return (
         <div className="courseNavContainer">
-            <CourseNavigationHeader name={name} {...props} />
+            <CourseNavigationHeader
+                name={name}
+                firstSlide={slideIndex === 0}
+                lastSlide={slideIndex === lessons.length - 1}
+                {...props}
+            />
             <Nav variant="pills" className="courseNav">
                 {lessons.map(({ id, title, type }) => {
                     return (
