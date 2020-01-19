@@ -17,7 +17,7 @@ export type MediaItem = {
      * Stores the position in the list of items for a given course.
      * This allows re-ordering items on the go.
      */
-    index: number,
+    orderIndex: number,
 
     title: string,
 

@@ -18,10 +18,10 @@ type Props = {
     course: ?Course,
 };
 
-const getKey = (mediaItem: MediaItem) => `mediaItem-${mediaItem.id}-ord-${mediaItem.index}`;
+const getKey = (mediaItem: MediaItem) => `mediaItem-${mediaItem.id}-ord-${mediaItem.orderIndex}`;
 
 const MediaAdminList = ({ course }: Props) => {
-    const initialList = (course && course.media) || [];
+    const initialList = (course && course.lessons) || [];
     const [items, setItems] = React.useState([...initialList]);
     const dispatch = useDispatch();
 

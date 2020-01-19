@@ -1,5 +1,7 @@
 // @flow
 
+import type { MediaItem } from '../media';
+
 export type Person = {
     id: number,
     name: string,
@@ -12,4 +14,5 @@ export type Course = {
     description: string,
     owner: Person,
     students: Person[],
+    lessons: MediaItem[],
 };
