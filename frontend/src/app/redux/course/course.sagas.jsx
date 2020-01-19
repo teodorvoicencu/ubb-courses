@@ -100,7 +100,9 @@ export function* createLesson({ courseID, title, content, url, lessonType }) {
 export function* reorderLesson({ courseID, lessonID, order }) {
     try {
         yield put(CourseActions.loading(true));
-        const response = yield call(axios.post, `/courses/${courseID}/lessons/${lessonID}`, order);
+        const response = yield call(axios.post, `/courses/${courseID}/lessons/${lessonID}`, {
+            order,
+        });
         if (response.status === 200) {
             yield put(CourseActions.reorderLessonSuccess());
         }
