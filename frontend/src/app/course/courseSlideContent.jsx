@@ -1,11 +1,12 @@
 // @flow
 import * as React from 'react';
 
-import CourseHtmlSlide from './courseHtmlSlide';
 import './styles/courseSlideContent.scss';
-import type { MediaItem } from './types';
-import { MediaType } from './types';
+import { MediaType } from '../media/types';
+import type { MediaItem } from '../media';
+
 import CourseVideoSlide from './courseVideoSlide';
+import CourseHtmlSlide from './courseHtmlSlide';
 
 type Props = {
     mediaItem: MediaItem,

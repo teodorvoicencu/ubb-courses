@@ -5,8 +5,9 @@ import Play from 'react-ionicons/lib/MdPlay';
 import Star from 'react-ionicons/lib/MdStar';
 
 import './styles/courseNavigation.scss';
+import { MediaType } from '../media/types';
+
 import type { Course } from './types';
-import { MediaType } from './types';
 import CourseNavigationHeader from './courseNavigationHeader';
 
 type Props = {
