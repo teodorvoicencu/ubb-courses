@@ -1,7 +1,7 @@
 @import '../../theme/variables';
 
 .courseHtmlSlide {
-    text-align: center;
-    padding: $ternary-margin;
+    margin: 0 2 * $ternary-margin;
+    padding: 2 * $ternary-padding;
     color: #fff;
 }
