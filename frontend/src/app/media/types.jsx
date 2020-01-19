@@ -4,10 +4,10 @@
  * Enumeration of possible media types.
  */
 export const MediaType = Object.freeze({
-    TEXT: 'text',
-    IMAGE: 'image',
-    VIDEO: 'video',
-    DOWNLOADABLE: 'downloadable',
+    TEXT: 'TEXT',
+    IMAGE: 'IMAGE',
+    VIDEO: 'VIDEO',
+    DOWNLOADABLE: 'DOWNLOADABLE',
 });
 
 export type MediaItem = {

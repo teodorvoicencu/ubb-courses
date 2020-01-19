@@ -31,10 +31,8 @@ const CourseNavigation = (props: Props): React.Node => {
                     return (
                         <Nav.Item className="navItem" key={index}>
                             <div className="slideNavIcon">
-                                {type.toLowerCase() === MediaType.TEXT && <Star className="icon" />}
-                                {type.toLowerCase() === MediaType.VIDEO && (
-                                    <Play className="icon" />
-                                )}
+                                {type === MediaType.TEXT && <Star className="icon" />}
+                                {type === MediaType.VIDEO && <Play className="icon" />}
                             </div>
                             <Nav.Link eventKey={id} className="navLink">
                                 {title}
