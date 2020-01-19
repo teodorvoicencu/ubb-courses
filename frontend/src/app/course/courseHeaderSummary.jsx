@@ -65,13 +65,16 @@ const CourseHeaderSummary = ({ name, ownerId, id, students }: Props): React.Node
                             Delete
                         </Button>
                     </>
-                ) : (
-                    <Button
-                        variant={enrolled ? 'success' : 'outline-primary'}
-                        size={'sm'}
-                        onClick={enrolled ? null : onEnroll}
+                ) : enrolled ? (
+                    <NavLink
+                        className={'btn btn-success btn-sm button'}
+                        to={AppRoutes.COURSE.CONTENT(id)}
                     >
-                        {enrolled ? 'Open Course' : 'Enroll'}
+                        Open Course
+                    </NavLink>
+                ) : (
+                    <Button variant={'outline-primary'} size={'sm'} onClick={onEnroll}>
+                        {'Enroll'}
                     </Button>
                 )}
             </div>

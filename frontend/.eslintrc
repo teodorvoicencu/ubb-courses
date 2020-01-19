@@ -133,6 +133,7 @@
     "no-return-assign": 0,
     "no-buffer-constructor": 0,
     "no-restricted-globals": 0,
+    "no-nested-ternary": 0,
     "no-plusplus": [
       "error",
       {
