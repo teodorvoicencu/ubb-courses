@@ -15,11 +15,15 @@ type Props = {
 const CourseContent = ({ course }: Props): React.Node => {
     const [slideIndex, setSlideIndex] = React.useState(0);
 
-    const handleSlideIndexChange = newSlideIndex => setSlideIndex(newSlideIndex);
-
     // Sort based on index
     const { lessons } = course;
     lessons.sort((x, y) => x.index - y.index);
+
+    const handleSlideIndexChange = newSlideIndex => {
+        // eslint-disable-next-line radix
+        const found = lessons.filter(lesson => lesson.id === parseInt(newSlideIndex));
+        setSlideIndex(found[0].orderIndex);
+    };
 
     const handleNextSlide = () => {
         setSlideIndex(Math.min(slideIndex + 1, lessons.length - 1));
