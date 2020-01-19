@@ -15,12 +15,12 @@ type Props = {
 };
 
 const CourseNavigation = (props: Props): React.Node => {
-    const { name, mediaItems } = props.course;
+    const { name, lessons } = props.course;
     return (
         <div className="courseNavContainer">
             <CourseNavigationHeader name={name} {...props} />
             <Nav variant="pills" className="courseNav">
-                {mediaItems.map(({ id, title, type }) => {
+                {lessons.map(({ id, title, type }) => {
                     return (
                         <Nav.Item className="navItem">
                             <div className="slideNavIcon">
