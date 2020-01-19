@@ -36,7 +36,7 @@ const CourseContent = ({ course }: Props): React.Node => {
     return (
         <Tab.Container activeKey={currentMediaItem.id} onSelect={handleSlideIndexChange}>
             <Row className="tabContainer">
-                <Col sm={2} className="colNoMargin dropShadow">
+                <Col sm={3} className="colNoMargin dropShadow">
                     <CourseNavigation
                         course={course}
                         slideIndex={slideIndex}
@@ -44,7 +44,7 @@ const CourseContent = ({ course }: Props): React.Node => {
                         onPrevSlide={handlePrevSlide}
                     />
                 </Col>
-                <Col sm={10} className="colNoMargin">
+                <Col sm={9} className="colNoMargin">
                     <CourseSlideContent mediaItem={currentMediaItem} />
                 </Col>
             </Row>
