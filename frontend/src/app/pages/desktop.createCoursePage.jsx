@@ -4,7 +4,7 @@ import { Card } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
-import './styles/desktop.addCoursePage.scss';
+import './styles/desktop.createCoursePage.scss';
 
 import { CourseActions } from '../redux/course';
 import CourseForm from '../course/courseForm';

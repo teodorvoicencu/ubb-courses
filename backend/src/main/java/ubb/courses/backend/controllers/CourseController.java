@@ -10,6 +10,7 @@ import ubb.courses.backend.dtos.courses.CourseConverter;
 import ubb.courses.backend.dtos.courses.CourseDTO;
 import ubb.courses.backend.dtos.lesson.LessonConverter;
 import ubb.courses.backend.dtos.lesson.LessonDTO;
+import ubb.courses.backend.dtos.lesson.ReorderOperationDTO;
 import ubb.courses.backend.models.Course;
 import ubb.courses.backend.services.course.ICourseService;
 import ubb.courses.backend.services.lesson.ILessonService;
@@ -90,8 +91,9 @@ public class CourseController  {
     public ResponseEntity<LessonDTO> reOrderLesson(
             @PathVariable Integer id,
             @PathVariable Integer lessonId,
-            @RequestBody Integer orderIndex
+            @RequestBody ReorderOperationDTO reorderOperation
     ) {
+        int orderIndex = reorderOperation.getOrder();
         return ResponseEntity.ok(
                 this.lessonConverter.createFrom(
                         this.lessonService.reOrderLesson(id, lessonId, orderIndex))

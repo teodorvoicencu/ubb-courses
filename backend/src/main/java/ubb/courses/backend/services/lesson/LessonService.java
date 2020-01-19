@@ -39,9 +39,8 @@ public class LessonService implements ILessonService {
                 .findById(courseId)
                 .orElseThrow(() -> new LessonException("Course not found!"));
 
-        if (course.getLessons().size() <= order || order < 0 || firstLesson.getOrderIndex().equals(order))
+        if (course.getLessons().size() <= order || order < 0)
             throw new LessonException("Invalid order index");
-
 
         Lesson secondLesson = this.lessonRepository
                 .findByCourse_IdAndOrderIndex(courseId, order)
