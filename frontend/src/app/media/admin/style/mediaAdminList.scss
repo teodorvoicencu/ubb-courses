@@ -1,0 +1,24 @@
+@import '../../../theme/variables';
+
+.list {
+    margin-bottom: $ternary-margin;
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.button {
+    margin-left: $secondary-margin;
+}
+
+.list-item {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.list-title {
+    font-weight: bold;
+}

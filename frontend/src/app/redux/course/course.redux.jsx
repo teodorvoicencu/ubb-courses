@@ -16,7 +16,7 @@ const { Types, Creators } = createActions({
     enrollCourse: ['id'],
     enrollCourseSuccess: [],
     enrollCourseFailure: [],
-    createLesson: ['courseID', 'title', 'content', 'url', 'type'],
+    createLesson: ['courseID', 'title', 'content', 'url', 'lessonType'],
     createLessonSuccess: [],
     createLessonFailure: [],
     reorderLesson: ['courseID', 'lessonID', 'order'],

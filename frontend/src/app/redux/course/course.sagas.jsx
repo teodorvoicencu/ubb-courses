@@ -78,14 +78,14 @@ export function* enrollCourse({ id }) {
     }
 }
 
-export function* createLesson({ courseID, title, content, url, type }) {
+export function* createLesson({ courseID, title, content, url, lessonType }) {
     try {
         yield put(CourseActions.loading(true));
         const response = yield call(axios.post, `/courses/${courseID}/lessons`, {
             title,
             content,
             url,
-            type,
+            type: lessonType,
         });
         if (response.status === 200) {
             yield put(CourseActions.createLessonSuccess());
@@ -100,7 +100,9 @@ export function* createLesson({ courseID, title, content, url, type }) {
 export function* reorderLesson({ courseID, lessonID, order }) {
     try {
         yield put(CourseActions.loading(true));
-        const response = yield call(axios.post, `/courses/${courseID}/lessons/${lessonID}`, order);
+        const response = yield call(axios.post, `/courses/${courseID}/lessons/${lessonID}`, {
+            order,
+        });
         if (response.status === 200) {
             yield put(CourseActions.reorderLessonSuccess());
         }

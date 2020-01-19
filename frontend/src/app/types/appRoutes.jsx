@@ -9,6 +9,7 @@ const AppRoutes = Object.freeze({
         DETAILS: value => `/courses/${value}`,
         CREATE: '/courses/create',
         EDIT: value => `/courses/${value}/update`,
+        ADD_LESSON: value => `/courses/${value}/add-lesson`,
     },
     PROFILE: '/profile',
 });
