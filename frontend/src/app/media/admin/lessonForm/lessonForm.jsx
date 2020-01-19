@@ -3,6 +3,7 @@ import * as React from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Formik } from 'formik';
 import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 import type { Course } from '../../../course/types';
 import { MediaType } from '../../index';
@@ -38,14 +39,16 @@ type Props = {
 
 const LessonForm = ({ course }: Props) => {
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const onSubmit = React.useCallback(
-        (values, { setSubmitting }) => {
-            const { title, content, type, url } = values;
-            dispatch(CourseActions.createLesson(course.id, title, content, url, type));
-            setSubmitting(false);
+        values => {
+            const { title, content, url } = values;
+            let { type } = values;
+            type = type.toUpperCase();
+            dispatch(CourseActions.createLesson(course.id, title, content, url, type, history));
         },
-        [dispatch, course],
+        [dispatch, course, history],
     );
 
     return (

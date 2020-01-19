@@ -55,8 +55,10 @@ const TypeGroup = ({ handleChange, values, errors }: Props) => (
             isValid={!errors.type && !!values.type}
             isInvalid={!!errors.type && !!values.type}
         >
-            {Object.keys(MediaType).map(type => (
-                <option value={type}>{type.toLowerCase()}</option>
+            {Object.keys(MediaType).map((type, index) => (
+                <option key={index} value={type}>
+                    {type.toLowerCase()}
+                </option>
             ))}
         </Form.Control>
         <Form.Control.Feedback type={'invalid'}>{errors.type}</Form.Control.Feedback>

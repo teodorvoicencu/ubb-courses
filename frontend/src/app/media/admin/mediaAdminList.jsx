@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { Button, ListGroup } from 'react-bootstrap';
 import ArrowUp from 'react-ionicons/lib/IosArrowDropup';
 import ArrowDown from 'react-ionicons/lib/IosArrowDropdown';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 
 import type { MediaItem } from '../types';
 import type { Course } from '../../course/types';
@@ -24,6 +24,7 @@ const MediaAdminList = ({ course }: Props) => {
     const initialList = (course && course.lessons) || [];
     const [items, setItems] = React.useState([...initialList]);
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const moveUp = index => {
         const up = index - 1;
@@ -45,9 +46,9 @@ const MediaAdminList = ({ course }: Props) => {
 
     const submitOrder = React.useCallback(() => {
         items.forEach((item, index) => {
-            dispatch(CourseActions.reorderLesson(course.id, item.id, index));
+            dispatch(CourseActions.reorderLesson(course.id, item.id, index, history));
         });
-    }, [dispatch, items, course.id]);
+    }, [dispatch, items, course.id, history]);
 
     return (
         <>

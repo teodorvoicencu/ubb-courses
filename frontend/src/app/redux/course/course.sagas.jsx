@@ -78,7 +78,7 @@ export function* enrollCourse({ id }) {
     }
 }
 
-export function* createLesson({ courseID, title, content, url, lessonType }) {
+export function* createLesson({ courseID, title, content, url, lessonType, history }) {
     try {
         yield put(CourseActions.loading(true));
         const response = yield call(axios.post, `/courses/${courseID}/lessons`, {
@@ -91,13 +91,14 @@ export function* createLesson({ courseID, title, content, url, lessonType }) {
             yield put(CourseActions.createLessonSuccess());
         }
         yield put(CourseActions.loading(false));
+        yield call(history.push, AppRoutes.COURSE.DETAILS(courseID));
     } catch (error) {
         yield put(CourseActions.loading(false));
         yield put(CourseActions.createLessonFailure());
     }
 }
 
-export function* reorderLesson({ courseID, lessonID, order }) {
+export function* reorderLesson({ courseID, lessonID, order, history }) {
     try {
         yield put(CourseActions.loading(true));
         const response = yield call(axios.post, `/courses/${courseID}/lessons/${lessonID}`, {
@@ -107,6 +108,7 @@ export function* reorderLesson({ courseID, lessonID, order }) {
             yield put(CourseActions.reorderLessonSuccess());
         }
         yield put(CourseActions.loading(false));
+        yield call(history.push, AppRoutes.COURSE.DETAILS(courseID));
     } catch (error) {
         yield put(CourseActions.loading(false));
         yield put(CourseActions.reorderLessonFailure());
